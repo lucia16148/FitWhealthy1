@@ -1,0 +1,125 @@
+/* RESET E STRUTTURA BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* SPAZIATURE VERTICALI */
+#header-container {
+    margin-bottom: 3rem;
+}
+
+.content {
+    flex: 1;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+}
+
+#footer-container {
+    padding-top: 3rem;
+}
+
+/* GRIGLIA RESPONSIVE */
+.quadrant-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* STILE QUADRANTI */
+.quadrant {
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    aspect-ratio: 1/1;
+}
+
+.quadrant:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* IMMAGINI PIÙ PICCOLE */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Nasconde le parti in eccesso */
+}
+
+.quadrant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene le proporzioni coprendo tutto lo spazio */
+    object-position: center; /* Centra l'immagine */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.quadrant:hover .quadrant-img {
+    transform: scale(1.05);
+}
+
+/* TESTO CENTRATO SOVRAPPOSTO */
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
+    transition: background 0.3s ease;
+}
+
+.quadrant:hover .text-overlay {
+    background: rgba(0,0,0,0.6);
+}
+
+.quadrant-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .quadrant-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .quadrant-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 0 1rem;
+    }
+
+    .quadrant-text {
+        font-size: 1.1rem;
+    }
+}

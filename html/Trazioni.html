@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Trazioni</title>
+    <link rel="stylesheet" href="/css/DettagliEsercizi.css">
+</head>
+<body>
+<div id="header-container"></div>
+
+<div class="exercise-type">Trazioni</div>
+
+<div class="main-content">
+    <div class="back-button">←</div>
+
+    <div class="exercise-content">
+        <img src="/image/trazioni-alla-sbarra-a-presa-supina.jpg" alt="Trazioni" class="exercise-image">
+
+        <div class="exercise-description">
+            <p>
+                Per iniziare appenditi alla sbarra mettendo le mani ad una distanza pari a circa larghezza delle spalle con il pollice sopra alla sbarra.<br>
+                Una volta staccati i piedi tira rivolgendo il petto verso l’alto e arrivando fino a mento sopra alla sbarra.<br>
+                Le spalle partono da una posizione neutra e a mano a mano che tiri si deprimono, allontanandosi il più possibile dalle orecchie.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="footer-container"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+</script>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        });
+</script>
+</body>
+</html>

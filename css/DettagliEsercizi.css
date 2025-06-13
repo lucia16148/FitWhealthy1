@@ -1,0 +1,76 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#header-container, #footer-container {
+    width: 100%;
+    align-self: stretch;
+}
+
+/* Il titolo subito sotto header */
+.exercise-type {
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border-radius: 999px;
+    text-align: center;
+    margin: 1rem auto 2rem auto;
+    width: fit-content;
+}
+
+/* Contenuto principale centrato */
+.main-content {
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 2rem 2rem 2rem;
+    margin: 0 auto;
+    flex: 1; /* per farlo espandere verticalmente */
+    box-sizing: border-box;
+
+}
+
+/* Freccia e layout */
+.back-button {
+    font-size: 2.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+/* Layout immagine + descrizione */
+.exercise-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.exercise-image {
+    width: 200px;
+    height: auto;
+    border: 2px solid red;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.exercise-description {
+    background-color: #666;
+    color: white;
+    border-radius: 2rem;
+    padding: 2rem;
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
