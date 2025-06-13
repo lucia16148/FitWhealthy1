@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitWhealty - Ricettario</title>
+  <link rel="stylesheet" href="/css/ricsec.css">
+</head>
+<body>
+<div id="header-container"></div>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+
+<main class="container">
+  <aside class="sidebar">
+    <a href="Menu.html" class="back-home">&lt; Menù</a>
+  </aside>
+
+  <section class="content">
+    <h1 class="page-title">Lista Ricette</h1>
+
+    <div class="recipe-grid">
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Filetto+di+pesce" alt="Filetto di pesce al forno">
+        </div>
+        <div class="recipe-details">
+          <p>Filetto di pesce al forno</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Orata+al+cartoccio" alt="Orata al cartoccio">
+        </div>
+        <div class="recipe-details">
+          <p>Orata al cartoccio</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Insalata+di+pollo" alt="Insalata di pollo">
+        </div>
+        <div class="recipe-details">
+          <p>Insalata di pollo</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Fiori+di+zucca" alt="Fiori di zucca al forno">
+        </div>
+        <div class="recipe-details">
+          <p>Fiori di zucca al forno</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Carne+pizzaola" alt="Carne alla pizzaiola">
+        </div>
+        <div class="recipe-details">
+          <p>Carne alla pizzaiola</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Calamari+limone" alt="Calamari al limone">
+        </div>
+        <div class="recipe-details">
+          <p>Calamari al limone</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Pollo+curry" alt="Pollo al curry">
+        </div>
+        <div class="recipe-details">
+          <p>Pollo al curry</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Zuppa+lenticchie" alt="Zuppa di lenticchie">
+        </div>
+        <div class="recipe-details">
+          <p>Zuppa di lenticchie</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Gnocchi+pesto" alt="Gnocchi al pesto">
+        </div>
+        <div class="recipe-details">
+          <p>Gnocchi al pesto</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-item">
+        <div class="recipe-image-container">
+          <img src="https://via.placeholder.com/180x120/4CAF50?text=Torta+cioccolato" alt="Torta al cioccolato">
+        </div>
+        <div class="recipe-details">
+          <p>Torta al cioccolato</p>
+          <div class="actions">
+            <button class="like-button">♡</button>
+            <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="add-button">+</button>
+  </section>
+</main>
+
+    <button class="add-button">+</button>
+  </section>
+</main>
+
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+<script src="/javascript/ricsec.js"></script>
+</body>
+
+</html>

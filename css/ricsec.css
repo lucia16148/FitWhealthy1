@@ -1,0 +1,208 @@
+/* Stili Generali */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px; /* Mantieni questa larghezza massima per il layout generale */
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Assicura che i contenuti non escano dalla scatola principale */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    padding: 20px;
+}
+
+.back-home {
+    color: #007bff;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    position: relative;
+    /* Aggiungi overflow-y: auto per abilitare lo scroll se il contenuto supera l'altezza */
+    /* Non qui, lo faremo sul 'container' o sul 'recipe-grid' in base al layout desiderato.
+       Nel tuo caso, la pagina stessa scorrerà se il contenuto del 'content' è troppo grande. */
+}
+
+.page-title {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+/* Griglia per le ricette */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Due colonne */
+    gap: 30px; /* Aumenta lo spazio tra gli elementi per oggetti più grandi */
+    padding: 0 10px;
+    /* Non settare un'altezza fissa qui, lascia che il contenuto determini l'altezza */
+}
+
+.recipe-item {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    height: 300px;
+    /* Aumenta la larghezza/altezza base, ma la larghezza è già gestita dalla griglia (1fr) */
+}
+
+.recipe-image-container {
+    flex-shrink: 0;
+    width: 250px; /* Aumenta la larghezza dell'immagine */
+    height: 300px; /* Aumenta l'altezza dell'immagine */
+    overflow: hidden;
+}
+
+.recipe-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid #4CAF50;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.recipe-details {
+    flex-grow: 1;
+    padding: 12px 18px; /* Aumenta il padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px; /* Deve corrispondere all'altezza dell'immagine */
+    box-sizing: border-box;
+}
+
+.recipe-details p {
+    margin: 0;
+    font-size: 1.25em; /* Aumenta la dimensione del testo */
+    font-weight: bold;
+    color: #333;
+}
+
+.recipe-details .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px; /* Aumenta lo spazio tra i bottoni */
+    margin-top: auto;
+}
+
+.recipe-details .actions button {
+    background: none;
+    border: none;
+    font-size: 2.2em; /* Aumenta la dimensione dei bottoni */
+    cursor: pointer;
+    outline: none;
+    color: #4CAF50;
+}
+
+.comment-button img {
+    width: 30px; /* Imposta la larghezza dell'immagine del commento */
+    height: 30px; /* Imposta l'altezza dell'immagine del commento */
+    vertical-align: middle; /* Aiuta ad allineare l'immagine */
+    /* Potresti voler applicare un filtro per colorare l'immagine se è monocromatica */
+    /* filter: invert(49%) sepia(87%) saturate(583%) hue-rotate(69deg) brightness(97%) contrast(87%); /* Esempio per colorare di verde */
+}
+
+/* Stili per il bottone like (ancora testuale) */
+.like-button {
+    font-size: 2.2em; /* Mantenuto per il carattere del cuore */
+    color: #4CAF50; /* Colore verde per il cuore */
+}
+
+/* Add Button (Floating) */
+.add-button {
+    position: fixed;
+    bottom: 40px;
+    left: 230px;
+    background-color: green;
+    color: white;
+    font-size: 3.5em; /* Aumenta la dimensione del + */
+    width: 70px; /* Aumenta la larghezza */
+    height: 70px; /* Aumenta l'altezza */
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+/* Responsive Design per la lista */
+@media (max-width: 992px) {
+    .recipe-grid {
+        grid-template-columns: 1fr; /* Una colonna su schermi più piccoli */
+        gap: 20px; /* Riduci il gap su mobile */
+        padding: 0;
+    }
+
+    .recipe-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .recipe-image-container {
+        width: 100%;
+        height: 180px; /* Altezza maggiore per l'immagine mobile */
+    }
+
+    .recipe-image-container img {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .recipe-details {
+        height: auto;
+        text-align: center;
+        padding: 15px; /* Aumenta il padding su mobile */
+    }
+
+    .recipe-details p {
+        font-size: 1.3em; /* Aumenta la dimensione del testo su mobile */
+    }
+
+    .recipe-details .actions {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .recipe-details .actions button {
+        font-size: 2em; /* Dimensione dei bottoni su mobile */
+    }
+
+    .add-button {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px; /* Dimensione del bottone + su mobile */
+        height: 60px;
+        font-size: 3em;
+    }
+}

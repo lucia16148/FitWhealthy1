@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitWhealty - Ricettario</title>
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+<div id="header-container"></div>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+
+<main class="container">
+
+  <section class="content">
+    <h1 class="page-title">Ricettario</h1>
+
+    <div class="carousel-grid">
+      <div class="carousel-section">
+        <div class="section-header">
+          <h2>Primi</h2>
+          <a href="#" class="view-all">view all</a>
+        </div>
+        <div class="carousel" id="carousel-primi">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img  src="../image/Strozzapreti salmone, fiori di zucca e acciuga.webp"alt="Strozzapreti salmone, fiori di zucca e acciuga">
+              <div class="item-details">
+                <p>Strozzapreti salmone, fiori di zucca e acciuga</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../image/eliche-con-peperoni-fave-e-ricotta.webp" alt="Carbonara">
+              <div class="item-details">
+                <p>Carbonara</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../image/orecchiette-tiepide-e-verdure-allolio-aromatico.webp" alt="Lasagne">
+              <div class="item-details">
+                <p>Lasagne</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-dots">
+            <span class="dot active" data-carousel="carousel-primi" data-slide="0"></span>
+            <span class="dot" data-carousel="carousel-primi" data-slide="1"></span>
+            <span class="dot" data-carousel="carousel-primi" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section">
+        <div class="section-header">
+          <h2>Secondi</h2>
+          <a href="RicetteSecondi.html" class="view-all">view all</a>
+        </div>
+        <div class="carousel" id="carousel-secondi">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Filetto+di+pesce" alt="Filetto di pesce al forno">
+              <div class="item-details">
+                <p>Filetto di pesce al forno</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Pollo+arrosto" alt="Pollo arrosto">
+              <div class="item-details">
+                <p>Pollo arrosto</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Salmone+grigliato" alt="Salmone grigliato">
+              <div class="item-details">
+                <p>Salmone grigliato</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-dots">
+            <span class="dot active" data-carousel="carousel-secondi" data-slide="0"></span>
+            <span class="dot" data-carousel="carousel-secondi" data-slide="1"></span>
+            <span class="dot" data-carousel="carousel-secondi" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section">
+        <div class="section-header">
+          <h2>Contorni</h2>
+          <a href="#" class="view-all">view all</a>
+        </div>
+        <div class="carousel" id="carousel-contorni">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Insalata+finocchi" alt="Insalata di finocchi e arance">
+              <div class="item-details">
+                <p>Insalata di finocchi e arance</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Patate+al+forno" alt="Patate al forno">
+              <div class="item-details">
+                <p>Patate al forno</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Verdure+grigliate" alt="Verdure grigliate">
+              <div class="item-details">
+                <p>Verdure grigliate</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-dots">
+            <span class="dot active" data-carousel="carousel-contorni" data-slide="0"></span>
+            <span class="dot" data-carousel="carousel-contorni" data-slide="1"></span>
+            <span class="dot" data-carousel="carousel-contorni" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section">
+        <div class="section-header">
+          <h2>Dolci</h2>
+          <a href="#" class="view-all">view all</a>
+        </div>
+        <div class="carousel" id="carousel-dolci">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Torta+di+carote" alt="Torta di carote">
+              <div class="item-details">
+                <p>Torta di carote</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Cheesecake" alt="Cheesecake">
+              <div class="item-details">
+                <p>Cheesecake</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://via.placeholder.com/300x200/4CAF50?text=Tiramisu" alt="Tiramisu">
+              <div class="item-details">
+                <p>Tiramisu</p>
+                <button class="like-button">❤</button>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-dots">
+            <span class="dot active" data-carousel="carousel-dolci" data-slide="0"></span>
+            <span class="dot" data-carousel="carousel-dolci" data-slide="1"></span>
+            <span class="dot" data-carousel="carousel-dolci" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+    </div> <button class="add-button">+</button>
+  </section>
+</main>
+
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+
+<script src="/javascript/menu.js"></script>
+</body>
+</html>
