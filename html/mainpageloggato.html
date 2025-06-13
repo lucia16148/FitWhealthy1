@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitWhealty</title>
+    <script src="/javascript/mainpage.js" defer></script>
+    <link rel="stylesheet" href="/css/mainpageloggato.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div id="header-container"></div>
+
+<!-- Banner Principale con Freccette -->
+<div class="banner-container">
+    <button class="arrow-left"><i class="fas fa-chevron-left"></i></button>
+    <div class="banner">
+        <div class="slide active">
+            <img src="/image/logoFitWhealthy.png" alt="Promo 1">
+        </div>
+        <div class="slide">
+            <img src="/image/20hours_lat-machine_large.jpg" alt="Promo 2">
+        </div>
+        <div class="slide">
+            <img src="/image/REMATORE-MONOLATERALE-CON-MANUBRIO-DORSALI-GRAN-DORSALI-F-300x171.jpg" alt="Promo 3">
+        </div>
+    </div>
+    <button class="arrow-right"><i class="fas fa-chevron-right"></i></button>
+</div>
+<div class="slider-dots"></div>
+
+<!-- Sezione Immagini Esercizi e Cibi -->
+<div class="image-gallery">
+    <div class="gallery-item">
+        <img src="/image/logoFitWhealthy.png" alt="Esercizio 1">
+        <p>Allenamento</p>
+    </div>
+    <div class="gallery-item">
+        <img src="/image/20hours_lat-machine_large.jpg" alt="Cibo Sano">
+        <p>Alimentazione</p>
+    </div>
+    <div class="gallery-item">
+        <img src="/image/REMATORE-MONOLATERALE-CON-MANUBRIO-DORSALI-GRAN-DORSALI-F-300x171.jpg" alt="Esercizio 2">
+        <p>Fitness</p>
+    </div>
+    <div class="gallery-item">
+        <img src="/image/trazioni-alla-sbarra-a-presa-supina.jpg" alt="Ricetta Sana">
+        <p>Ricette</p>
+    </div>
+</div>
+
+<div id="footer-container"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+</script>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        });
+</script>
+
+<script src="/javascript/mainpage.js" defer></script>
+</body>
+</html>
