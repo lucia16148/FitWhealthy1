@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FitWhealty - Ricettario</title>
-  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/recipe.css">
 </head>
 <body>
 <div id="header-container"></div>
@@ -18,18 +18,19 @@
 
 <main class="container">
   <aside class="sidebar">
-    <a href="index.html" class="back-home">&lt; HomePage</a>
+    <a href="RicettePrimi.html" class="back-home">&lt; Menù Primi</a>
   </aside>
 
   <section class="content">
-    <h1 class="page-title">Ricettario</h1>
+    <h1 class="page-title">Ricetta</h1>
 
     <div class="recipe-banner">
       <div class="banner-text">
         <h1 id="recipe-title"></h1>
         <div class="banner-actions">
           <button class="like-button">♡</button>
-          <button class="comment-button"><img src="comment-icon-white.png" alt="Commenta"></button>
+
+          <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
         </div>
       </div>
       <div class="banner-image">
@@ -53,6 +54,15 @@
   </section>
 </main>
 
+
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
 <script src="/javascript/recipe.js"></script>
 </body>
 </html>

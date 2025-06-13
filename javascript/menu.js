@@ -141,12 +141,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCarousel('carousel-contorni');
     initializeCarousel('carousel-dolci');
 
-    // Listener per il bottone "Add"
-    const addButton = document.querySelector('.add-button');
-    if (addButton) {
-        addButton.addEventListener('click', () => {
-            alert('Hai cliccato il bottone "Aggiungi"!');
-            // Qui puoi aggiungere la logica per aprire un modale, navigare, ecc.
-        });
-    }
+
 });

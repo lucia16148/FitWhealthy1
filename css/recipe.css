@@ -20,8 +20,7 @@ body {
 .sidebar {
     width: 200px;
     padding: 20px;
-    background-color: #f8f8f8;
-    border-right: 1px solid #eee;
+
 }
 
 .back-home {
@@ -94,8 +93,7 @@ body {
 
 .banner-actions .like-button {
     font-size: 2em; /* Dimensione del cuore */
-    color: white; /* Cuore bianco sul banner giallo*/
-    /* Se usi Font Awesome, potresti voler applicare un filtro per il colore */
+    color: #4CAF50; /* Verde, come il bordo delle immagini */
 }
 
 .banner-actions .comment-button img {
@@ -173,12 +171,20 @@ body {
     text-decoration: none;
 }
 
+.comment-button img {
+    width: 30px; /* Imposta la larghezza dell'immagine del commento */
+    height: 30px; /* Imposta l'altezza dell'immagine del commento */
+    vertical-align: middle; /* Aiuta ad allineare l'immagine */
+    /* Potresti voler applicare un filtro per colorare l'immagine se è monocromatica */
+    /* filter: invert(49%) sepia(87%) saturate(583%) hue-rotate(69deg) brightness(97%) contrast(87%); /* Esempio per colorare di verde */
+}
+
 /* Add Button (Floating) - Mantenuto per consistenza */
 .add-button {
     position: fixed;
     bottom: 40px;
     left: 230px;
-    background-color: #007bff;
+    background-color: green;
     color: white;
     font-size: 3.5em;
     width: 70px;
