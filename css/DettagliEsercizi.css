@@ -73,4 +73,14 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
 }
+.back-button {
+    font-size: 4rem;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: inherit; /* eredita il colore del testo */
+    margin-top: -7rem;
+    position: absolute;
+
+}
 

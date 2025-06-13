@@ -10,40 +10,55 @@
 <div id="header-container"></div>
 
 <main class="exercise-container">
-  <div class="exercise-type">Schiena</div>
+  <div class="exercise-type">Braccia</div>
+  <a href="EserciziGenerale.html" class="back-button">←</a>
 
   <div class="exercise-list">
     <div class="exercise-item">
+      <a href="Esercizi.html" class="type-button">
       <span class="exercise-name">Squat</span>
+      </a>
       <span class="exercise-description">Esercizio per gambe e glutei</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
     <div class="exercise-item">
+      <a href="Esercizi.html" class="type-button">
       <span class="exercise-name">Panca piana</span>
+      </a>
       <span class="exercise-description">Allenamento per pettorali</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <a href="Esercizi.html" class="type-button">
+      <span class="exercise-name">Stacco da terra</span>
+      </a>
+      <span class="exercise-description">Coinvolge tutta la catena posteriore</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
     <div class="exercise-item">
       <span class="exercise-name">Stacco da terra</span>
       <span class="exercise-description">Coinvolge tutta la catena posteriore</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
     <div class="exercise-item">
       <span class="exercise-name">Stacco da terra</span>
       <span class="exercise-description">Coinvolge tutta la catena posteriore</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
     <div class="exercise-item">
       <span class="exercise-name">Stacco da terra</span>
       <span class="exercise-description">Coinvolge tutta la catena posteriore</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
     <div class="exercise-item">
       <span class="exercise-name">Stacco da terra</span>
       <span class="exercise-description">Coinvolge tutta la catena posteriore</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
     <div class="exercise-item">
       <span class="exercise-name">Stacco da terra</span>
       <span class="exercise-description">Coinvolge tutta la catena posteriore</span>
-    </div>
-    <div class="exercise-item">
-      <span class="exercise-name">Stacco da terra</span>
-      <span class="exercise-description">Coinvolge tutta la catena posteriore</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
 
 
@@ -64,6 +79,11 @@
           .then(data => {
             document.getElementById('header-container').innerHTML = data;
           });
+</script>
+<script>
+  function toggleHeart(el) {
+    el.textContent = el.textContent === '🖤' ? '❤️' : '🖤';
+  }
 </script>
 <!-- FOOTER QUI -->
 </body>
