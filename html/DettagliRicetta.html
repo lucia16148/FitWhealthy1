@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitWhealty - Ricettario</title>
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+<div id="header-container"></div>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+
+<main class="container">
+  <aside class="sidebar">
+    <a href="index.html" class="back-home">&lt; HomePage</a>
+  </aside>
+
+  <section class="content">
+    <h1 class="page-title">Ricettario</h1>
+
+    <div class="recipe-banner">
+      <div class="banner-text">
+        <h1 id="recipe-title"></h1>
+        <div class="banner-actions">
+          <button class="like-button">♡</button>
+          <button class="comment-button"><img src="comment-icon-white.png" alt="Commenta"></button>
+        </div>
+      </div>
+      <div class="banner-image">
+        <img id="recipe-image" src="" alt="">
+      </div>
+    </div>
+
+    <div class="recipe-section">
+      <h2>Ingredients</h2>
+      <div class="ingredients-list" id="ingredients-content">
+      </div>
+    </div>
+
+    <div class="recipe-section">
+      <h2>Instructions</h2>
+      <ol class="instructions-list" id="instructions-content">
+      </ol>
+    </div>
+
+    <button class="add-button">+</button>
+  </section>
+</main>
+
+<script src="/javascript/recipe.js"></script>
+</body>
+</html>
