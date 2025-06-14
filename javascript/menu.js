@@ -14,7 +14,6 @@ const staticRecipesArray = [
     // Aggiungi qui tutte le altre ricette
 ];
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Funzioni di gestione "Mi Piace" (SPOSATE QUI DA GLOBAL-SYNC.JS) ---
