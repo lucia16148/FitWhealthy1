@@ -93,9 +93,12 @@ body {
     border-radius: 999px;
     flex: 1;
     font-size: 1.1rem;
-    white-space: nowrap;
+
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: normal; /* permette al testo di andare su più righe */
+    overflow-wrap: break-word; /* va a capo anche se parola troppo lunga */
+    max-height: none; /*
 }
 
 .header-row {
