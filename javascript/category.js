@@ -113,12 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="recipe-item" data-recipe-id="${recipe.id}">
                 <a href="DettagliRicetta.html?id=${recipe.id}" class="recipe-link">
                     <div class="recipe-image-container">
-                        <img src="${recipe.imageUrl}" alt="${recipe.title}">
+                        <img src="${recipe.imageUrl}" alt="${recipe.title}"></a>
                     </div>
                     <div class="recipe-details">
                         <p>${recipe.title}</p>
                     </div>
-                </a>
+                
                 <div class="actions">
                     <button class="like-button${likedClass}" data-recipe-id="${recipe.id}">${heartIcon}</button>
                     <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
