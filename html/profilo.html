@@ -75,6 +75,27 @@
             document.getElementById('footer-container').innerHTML = data;
           });
 </script>
+<script>
+  function loadLikedExercises() {
+    const exerciseList = document.getElementById('exercises-list');
+    const likedExercises = JSON.parse(localStorage.getItem('likedExercises')) || [];
+    exerciseList.innerHTML = '';
+
+    if (likedExercises.length === 0) {
+      exerciseList.innerHTML = '<li>Nessun esercizio preferito</li>';
+    } else {
+      likedExercises.forEach(name => {
+        const li = document.createElement('li');
+        li.textContent = name;
+        exerciseList.appendChild(li);
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadLikedExercises);
+</script>
+
+
 <script src="/javascript/login.js"></script>
 <script src="/javascript/profilo.js"></script>
 <script src="/javascript/like.js"></script>
