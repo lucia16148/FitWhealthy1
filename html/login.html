@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FitWhealthy - Login</title>
-    <link rel="stylesheet" href="../style.css" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitWhealty - Login</title>
+    <link rel="stylesheet" href="/css/login.css"> </head>
 <body>
+<div class="login-container">
+    <h1>Login</h1>
+    <form id="login-form">
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Inserisci la tua email" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Inserisci la tua password" required>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+    <p class="message">Non hai un account? <a href="register.html">Registrati</a></p>
+    <p class="message"><a href="index.html">Torna alla HomePage</a></p>
+</div>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="logo">FitWhealthy</div>
-    <div class="nav-buttons">
-        <a href="login.html" class="nav-btn">Sign in</a>
-    </div>
-</nav>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <p>© 2025 FitWhealthy. Tutti i diritti riservati.</p>
-    <p>Contatti: info@fitwhealthy.it | Privacy | Termini e Condizioni</p>
-</footer>
-
-</body>
+<script src="/javascript/login.js"></script> </body>
 </html>

@@ -31,6 +31,26 @@
   </section>
 </main>
 
+<div id="comments-modal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <div class="comments-section-in-modal">
+      <h2 id="modal-recipe-title">Commenti</h2>
+      <div class="comments-list" id="comments-list">
+        <p>Nessun commento ancora. Sii il primo ad aggiungerne uno!</p>
+      </div>
+
+      <div class="add-comment-section" id="add-comment-section">
+        <h3>Aggiungi un commento</h3>
+        <div class="comment-input-area">
+          <textarea id="new-comment-text" placeholder="Scrivi il tuo commento qui..." rows="4"></textarea>
+          <button id="submit-comment-button" class="submit-comment-button">Invia Commento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="footer-container"></div>
 <script>
   fetch('footer.html')
@@ -40,5 +60,8 @@
           });
 </script>
 
+<script src="/javascript/like.js"></script>
 <script src="/javascript/category.js"></script> </body>
+<script src="/javascript/commenti.js"></script>
+
 </html>

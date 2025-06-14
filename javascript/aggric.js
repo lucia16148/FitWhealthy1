@@ -29,6 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+    if (!loggedInUser) {
+        alert('Devi essere loggato per aggiungere una ricetta!');
+        window.location.href = 'login.html';
+        return;
+    }
+
     if (publishButton) {
         publishButton.addEventListener('click', () => {
             const recipeName = document.getElementById('recipe-name').value.trim();
@@ -47,12 +54,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageUrl: uploadedImageBase64,
                 ingredients: ingredients,
                 instructions: instructions,
-                type: recipeType
-            };
+                type: recipeType,
+                creatorId: loggedInUser.email // ASSOCIA LA RICETTA ALL'UTENTE
 
+            };
+            console.log()
             let customRecipes = JSON.parse(sessionStorage.getItem('customRecipes')) || [];
             customRecipes.push(newRecipe);
             sessionStorage.setItem('customRecipes', JSON.stringify(customRecipes));
+
+            loggedInUser.createdRecipeIds = loggedInUser.createdRecipeIds || [];
+            loggedInUser.createdRecipeIds.push(newRecipe.id);
+            sessionStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            const userIndex = users.findIndex(u => u.email === loggedInUser.email);
+            if (userIndex !== -1) {
+                users[userIndex] = loggedInUser;
+                localStorage.setItem('users', JSON.stringify(users));
+            }
 
             alert('Ricetta pubblicata e salvata nel browser!');
 
