@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elenco Esercizi</title>
+  <link rel="stylesheet" href="/css/EserciziSpecifici.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<div id="header-container"></div>
+
+
+<main class="exercise-container">
+
+
+  <div class="exercise-type">Addome</div>
+
+  <a href="EserciziGenerale.html" class="back-button">←</a>
+
+
+  <div class="exercise-list">
+    <div class="exercise-item">
+      <a href="Esercizi.html?esercizio=Crunch&categoria=Addome" class="type-button">
+      <span class="exercise-name">Crunch</span>
+      </a>
+      <span class="exercise-description">Il crunch è un esercizio per gli addominali, in particolare il retto dell’addome. Si esegue sollevando le spalle da terra con un movimento controllato, senza staccare la zona lombare.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <a href="Esercizi.html?esercizio=Legrise&categoria=addome" class="type-button">
+      <span class="exercise-name">Legrise</span>
+      </a>
+      <span class="exercise-description">Le leg raise sono un esercizio per gli addominali inferiori. Si eseguono sollevando le gambe tese da terra mantenendo il core contratto.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <a href="Esercizi.html?esercizio=AB&categoria=addome" class="type-button">
+      <span class="exercise-name">AB Wheel Roller</span>
+      </a>
+      <span class="exercise-description">L’AB Wheel Roller è un attrezzo per allenare intensamente il core, coinvolgendo addominali, lombari e spalle attraverso movimenti di estensione e ritorno.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...e</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+  </div>
+
+    <!-- Aggiungi altri esercizi se vuoi testare lo scroll -->
+
+</main>
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+<script src="/javascript/cuore.js"></script>
+
+<!-- FOOTER QUI -->
+</body>
+</html>

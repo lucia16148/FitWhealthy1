@@ -189,14 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'spaghetti-pomodoro': { id: 'spaghetti-pomodoro', title: 'Spaghetti al Pomodoro', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Spaghetti', ingredients: `...`, instructions: `...`, type: 'primo' },
         'risotto-funghi': { id: 'risotto-funghi', title: 'Risotto ai Funghi', imageUrl: 'https://via.placeholder.com/180x120/FFD700?text=Risotto+Funghi', ingredients: `...`, instructions: `...`, type: 'primo' },
         'filetto-pesce': { id: 'filetto-pesce', title: 'Filetto di pesce al forno', imageUrl: '../image/Salmone-al-forno-04082023-buttalapasta.it_-1024x683.jpg', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'pollo-limone': { id: 'pollo-limone', title: 'Pollo al Limone', imageUrl: 'https://via.placeholder.com/180x120/ADD8E6?text=Pollo+Limone', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'orata-cartoccio': { id: 'orata-cartoccio', title: 'Orata al cartoccio', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Orata+al+cartoccio', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'insalata-pollo': { id: 'insalata-pollo', title: 'Insalata di pollo', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Insalata+di+pollo', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'carne-pizzaiola': { id: 'carne-pizzaiola', title: 'Carne alla pizzaiola', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Carne+pizzaola', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'calamari-limone': { id: 'calamari-limone', title: 'Calamari al limone', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Calamari+limone', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'pollo-curry': { id: 'pollo-curry', title: 'Pollo al curry', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Pollo+curry', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'tiramisu': { id: 'tiramisu', title: 'Tiramisù Classico', imageUrl: 'https://via.placeholder.com/180x120/DAA520?text=Tiramisu', ingredients: `...`, instructions: `...`, type: 'dolce' },
-        'patate-forno': { id: 'patate-forno', title: 'Patate al Forno', imageUrl: 'https://via.placeholder.com/180x120/FFA500?text=Patate+Forno', ingredients: `...`, instructions: `...`, type: 'contorno' }
+        'tiramisu': { id: 'tiramisu', title: 'Tiramisù', imageUrl: 'https://via.placeholder.com/180x120/FFB6C1?text=Tiramisu', ingredients: `...`, instructions: `...`, type: 'dessert' },
+        'patate-forno': { id: 'patate-forno', title: 'Patate al Forno', imageUrl: 'https://via.placeholder.com/180x120/8B4513?text=Patate+Forno', ingredients: `...`, instructions: `...`, type: 'contorno' },
         // ... AGGIUNGI QUI TUTTE LE TUE RICETTE STATICHE ESISTENTI
     };
 

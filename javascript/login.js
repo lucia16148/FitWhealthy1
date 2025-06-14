@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (foundUser) {
                 sessionStorage.setItem('loggedInUser', JSON.stringify(foundUser));
                 alert(`Benvenuto, ${foundUser.name || foundUser.email}! Login riuscito.`);
-                window.location.href = 'index.html';
+                window.location.href = 'mainpageloggato.html';
             } else {
                 alert('Email o password non validi. Riprova.');
             }
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.removeItem('loggedInUser');
         alert('Logout effettuato.');
         updateLoginLogoutLink();
-        window.location.href = 'index.html';
+        window.location.href = 'mainpageloggato.html';
     }
 
     updateLoginLogoutLink();

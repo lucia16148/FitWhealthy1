@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6 Quadranti Interattivi</title>
+  <link rel="stylesheet" href="/css/EserciziGenerale.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<div id="header-container"></div>
+<div class="quadrant-container">
+  <!-- Quadrante 1 -->
+  <a href="Braccia.html" class="quadrant">
+    <div class="image-wrapper">
+    <img src="/image/vFT9RslqQd6Kgox6uKuRQw.webp" alt="Immagine 1" class="quadrant-img">
+    <div class="text-overlay">
+    <div class="quadrant-text">Braccia</div>
+    </div>
+    </div>
+  </a>
+
+  <!-- Quadrante 2 -->
+  <a href="Gambe.html" class="quadrant">
+    <div class="image-wrapper">
+      <img src="/image/64239312-immagine-in-bianco-e-nero-di-atletica-gambe-muscolose-di-runner-maschile.jpg" alt="Immagine 2" class="quadrant-img">
+      <div class="text-overlay">
+        <div class="quadrant-text">Gambe</div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Quadrante 3 -->
+  <a href="Schiena.html" class="quadrant">
+    <div class="image-wrapper">
+      <img src="/image/87250669-parte-posteriore-maschio-sexy-del-culturista-dell-atleta-che-posa-al-potere-con-le-mani-sollevate-e.jpg" alt="Immagine 3" class="quadrant-img">
+      <div class="text-overlay">
+        <div class="quadrant-text">Schiena</div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Quadrante 4 -->
+  <a href="Addome.html" class="quadrant">
+    <div class="image-wrapper">
+      <img src="/image/spalle-allenamento.jpg" alt="Immagine 4" class="quadrant-img">
+      <div class="text-overlay">
+        <div class="quadrant-text">Addome</div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Quadrante 5 -->
+  <a href="Cardio.html" class="quadrant">
+    <div class="image-wrapper">
+      <img src="/image/pexels-photo-6388522.webp" alt="Immagine 5" class="quadrant-img">
+      <div class="text-overlay">
+        <div class="quadrant-text">Cardio</div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Quadrante 6 -->
+  <a href="Petto.html" class="quadrant">
+    <div class="image-wrapper">
+      <img src="/image/spalle-allenamento-1024x576.jpg" alt="Immagine 6" class="quadrant-img">
+      <div class="text-overlay">
+        <div class="quadrant-text">Petto</div>
+      </div>
+    </div>
+  </a>
+</div>
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+</body>
+</html>
