@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<!-- Header -->
+
+<!-- ✅ HEADER con solo Login e Registrati -->
 <header class="header">
     <div class="logo">
-        <img src="/image/logoFitWhealthy.png" alt="Logo" class="logo-img">
-        <h1>Progetto HCI</h1>
+        <a href="mainpage.html" class="quadrant">
+            <img src="/image/logoFitWhealthy.png" alt="Logo" class="logo-img" />
+        </a>
+        <h1>FitWhealty</h1>
     </div>
     <nav class="nav-buttons">
-        <button class="btn-login">Login</button>
-        <button class="btn-register">Registrati</button>
+        <a href="login.html"><button class="btn-login">Login</button></a>
+        <a href="signin.html"><button class="btn-register">Registrati</button></a>
     </nav>
 </header>
 
-<!-- Banner Principale con Freccette -->
 <div class="banner-container">
     <button class="arrow-left"><i class="fas fa-chevron-left"></i></button>
     <div class="banner">
@@ -41,35 +43,81 @@
 
 <!-- Sezione Immagini Esercizi e Cibi -->
 <div class="image-gallery">
-    <div class="gallery-item">
+    <a href="#allenamento" class="gallery-item">
         <img src="/image/logoFitWhealthy.png" alt="Esercizio 1">
         <p>Allenamento</p>
-    </div>
-    <div class="gallery-item">
+    </a>
+    <a href="#alimentazione" class="gallery-item">
         <img src="/image/20hours_lat-machine_large.jpg" alt="Cibo Sano">
         <p>Alimentazione</p>
-    </div>
-    <div class="gallery-item">
+    </a>
+    <a href="#fitness" class="gallery-item">
         <img src="/image/REMATORE-MONOLATERALE-CON-MANUBRIO-DORSALI-GRAN-DORSALI-F-300x171.jpg" alt="Esercizio 2">
         <p>Fitness</p>
-    </div>
-    <div class="gallery-item">
+    </a>
+    <a href="#ricette" class="gallery-item">
         <img src="/image/trazioni-alla-sbarra-a-presa-supina.jpg" alt="Ricetta Sana">
         <p>Ricette</p>
-    </div>
+    </a>
 </div>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2024 FitWhealty - Interazione Uomo-Macchina</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-        </div>
+
+<section class="hub-intro">
+    <span class="hub-tag">FitWealthy</span>
+    <h2>Più di un semplice programma di allenamento</h2>
+    <div class="underline"></div>
+    <p>
+        FitWealthy è il programma che oltre 30.000 utenti hanno scelto per prendersi cura di se stessi a 360°.
+    </p>
+    <p>
+        Non è un semplice programma di allenamento, ma un <strong>esperienza trasformativa</strong> che nutre la relazione più importante:
+        <strong>quella con te stesso.</strong>
+    </p>
+    <p>
+        Grazie al supporto di Personal Trainer certificate e di un Team di esperte in alimentazione e benessere, verrai accompagnata nel raggiungimento dei tuoi obiettivi.
+    </p>
+</section>
+
+<!-- Sezione Carte Informative -->
+<section class="info-cards">
+    <div class="info-card">
+        <i class="fas fa-dumbbell"></i>
+        <h3>Seguire un allenamento sostenibile</h3>
+        <p>
+            Allenarsi tutti i giorni o in maniera sporadica non darà i risultati sperati.
+            Per far sì che l’allenamento ci permetta di ottenere risultati diventi una buona abitudine,
+            bisogna inserirlo nella propria routine e renderlo compatibile con il proprio stile di vita.
+        </p>
     </div>
-</footer>
+    <div class="info-card">
+        <i class="fas fa-clipboard-list"></i>
+        <h3>Fare pace con il cibo e darsi tempo per migliorare</h3>
+        <p>
+            Smettere di vederlo come un nemico da temere, ma piuttosto come un alleato che ci fornisce
+            l’energia e i nutrienti di cui abbiamo bisogno. Imparare a conoscerlo è fondamentale per fare
+            scelte consapevoli, senza cadere nella trappola delle diete estreme o delle restrizioni alimentari eccessive.
+        </p>
+    </div>
+    <div class="info-card">
+        <i class="fas fa-handshake"></i>
+        <h3>Condividere il percorso con persone appassionate</h3>
+        <p>
+            Allenarsi e prendersi cura di sé è bello. Farlo con altre persone e condividere i tuoi miglioramenti
+            ma anche le tue difficoltà, è tutto un altro gioco, più divertente e sempre motivante.
+        </p>
+    </div>
+</section>
+
+
+<div id="footer-container"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+</script>
+
 
 <script src="/javascript/mainpage.js" defer></script>
 </body>

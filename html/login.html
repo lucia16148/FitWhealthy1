@@ -2,25 +2,57 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FitWhealthy - Login</title>
-    <link rel="stylesheet" href="../style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitWhealty - Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="logo">FitWhealthy</div>
-    <div class="nav-buttons">
-        <a href="login.html" class="nav-btn">Sign in</a>
+<!-- Header -->
+<header class="header">
+    <div class="logo">
+        <a href="mainpage.html" class="quadrant">
+            <img src="/image/logoFitWhealthy.png" alt="Logo" class="logo-img" />
+        </a>
+        <h1>FitWhealty</h1>
     </div>
-</nav>
+    <nav class="nav-buttons">
+        <a href="mainpage.html"><button class="btn-home">Home</button></a>
+    </nav>
+</header>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <p>© 2025 FitWhealthy. Tutti i diritti riservati.</p>
-    <p>Contatti: info@fitwhealthy.it | Privacy | Termini e Condizioni</p>
-</footer>
+<!-- Login Form -->
+<div class="main-content">
+<div class="login-container">
+    <h1>Login</h1>
+    <form id="login-form">
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Inserisci la tua email" required />
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Inserisci la tua password" required />
+        </div>
+        <button type="submit" class="login-button">Login</button>
+    </form>
+    <p class="message"><a href="mainpageloggato.html">Torna alla HomePage</a></p>
+</div>
+</div>
 
+<!-- Footer -->
+<div id="footer-container"></div>
+
+<!-- Script -->
+<script src="/javascript/login.js"></script>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+</script>
 </body>
 </html>
