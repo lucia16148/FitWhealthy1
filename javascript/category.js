@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateHeartIcon(button, isLiked) {
         if (isLiked) {
             button.classList.add('liked');
-            button.innerHTML = '❤️';
+            button.innerHTML = '♥';
         } else {
             button.classList.remove('liked');
             button.innerHTML = '♡';
@@ -116,10 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${recipe.imageUrl}" alt="${recipe.title}">
                     </div>
                     <div class="recipe-details">
-                        <p>${recipe.title}</p>
+                        <p>${recipe.title}</p> </a>
                     </div>
-                </a>
-                <div class="actions">
+               
+                <div class="banner-actions">
                     <button class="like-button${likedClass}" data-recipe-id="${recipe.id}">${heartIcon}</button>
                     <button class="comment-button"><img src="../image/207-2078186_comment-icon-png.png" alt="Commenta"></button>
                 </div>

@@ -1,4 +1,4 @@
-// comments-script.js (MODIFICATO per ricevere il titolo della ricetta)
+// comments-script.js (MODIFICATO per ricevere il titolo della ricetta e gestire l'avatar)
 
 // Questa funzione sarà esposta globalmente per essere chiamata da recipe-script.js
 // Ora accetta due argomenti: l'ID e il TITOLO della ricetta.
@@ -39,14 +39,17 @@ window.loadCommentsForRecipeModal = function(recipeId, recipeTitle) {
             commentsForThisRecipe.forEach(comment => {
                 const commentItem = document.createElement('div');
                 commentItem.classList.add('comment-item');
-                const avatarLetter = comment.author ? comment.author.charAt(0).toUpperCase() : '👤';
+
                 const commentDate = new Date(comment.timestamp).toLocaleString('it-IT', {
                     day: '2-digit', month: '2-digit', year: 'numeric',
                     hour: '2-digit', minute: '2-digit'
                 });
 
+                // Determina l'URL dell'avatar: usa quello salvato con il commento o un default
+                const avatarSource = loggedInUser.avatar || '../image/default-avatar.png'; // Assicurati che questo percorso sia corretto
+
                 commentItem.innerHTML = `
-                    <img src="https://via.placeholder.com/40?text=${avatarLetter}" alt="Avatar" class="comment-avatar">
+                    <img src="${avatarSource}" alt="${comment.author || 'Utente Anonimo'}'s avatar" class="comment-avatar">
                     <div class="comment-body">
                         <p class="comment-author"><strong>${comment.author || 'Utente Anonimo'}</strong> <span class="comment-date">(${commentDate})</span>:</p>
                         <p class="comment-text">${comment.text}</p>
@@ -59,18 +62,20 @@ window.loadCommentsForRecipeModal = function(recipeId, recipeTitle) {
     }
 
     // Funzione per salvare un nuovo commento
-    function saveComment(recipeId, author, text) {
+    // AGGIUNTO: parametro avatarUrl
+    function saveComment(recipeId, author, text, avatar) {
         let allComments = JSON.parse(localStorage.getItem('recipeComments')) || {};
         if (!allComments[recipeId]) {
             allComments[recipeId] = [];
         }
-        allComments[recipeId].push({ author: author, text: text, timestamp: Date.now() });
+        // AGGIUNTO: salvataggio di avatarUrl nel commento
+        allComments[recipeId].push({ author: author, text: text, timestamp: Date.now(), avatar: avatar });
         localStorage.setItem('recipeComments', JSON.stringify(allComments));
     }
 
     // Funzione per aggiornare la UI della sezione commenti in base allo stato del login
     function updateCommentSectionUI() {
-        if (loggedInUser) {
+        if (loggedInUser && loggedInUser.name) { // Assicurati che loggedInUser e il suo nome esistano
             addCommentSection.innerHTML = `
                 <h3>Aggiungi un commento come ${loggedInUser.name}</h3>
                 <div class="comment-input-area">
@@ -82,6 +87,7 @@ window.loadCommentsForRecipeModal = function(recipeId, recipeTitle) {
             const submitCommentButtonRef = document.getElementById('submit-comment-button');
 
             if (submitCommentButtonRef) {
+                // Rimuovi eventuali listener precedenti per evitare duplicazioni
                 submitCommentButtonRef.removeEventListener('click', handleSubmitComment);
                 submitCommentButtonRef.addEventListener('click', handleSubmitComment);
             }
@@ -96,7 +102,7 @@ window.loadCommentsForRecipeModal = function(recipeId, recipeTitle) {
     function handleSubmitComment() {
         const currentNewCommentText = document.getElementById('new-comment-text');
 
-        if (!loggedInUser) {
+        if (!loggedInUser || !loggedInUser.name) {
             alert('Devi effettuare il login per poter commentare.');
             return;
         }
@@ -108,6 +114,8 @@ window.loadCommentsForRecipeModal = function(recipeId, recipeTitle) {
 
         const commentText = currentNewCommentText.value.trim();
         const authorName = loggedInUser.name;
+        // Recupera l'URL dell'avatar dell'utente loggato. Assicurati che 'avatarUrl' esista nell'oggetto utente.
+        const authorAvatarUrl = loggedInUser.avatar || '../image/default-avatar.png'; // Fallback
 
         if (commentText === '') {
             alert('Per favore, scrivi un commento prima di inviare.');
@@ -115,15 +123,16 @@ window.loadCommentsForRecipeModal = function(recipeId, recipeTitle) {
         }
 
         if (currentRecipeIdInComments) {
-            saveComment(currentRecipeIdInComments, authorName, commentText);
+            // AGGIUNTO: passaggio di authorAvatarUrl alla funzione saveComment
+            saveComment(currentRecipeIdInComments, authorName, commentText, authorAvatarUrl);
             currentNewCommentText.value = ''; // Pulisci il campo
             displayComments(); // Ricarica la lista dei commenti
         } else {
-            // Questo alert non dovrebbe più apparire se l'ID viene passato correttamente
             alert('Errore: ID ricetta non disponibile per salvare il commento.');
             console.error("ID ricetta corrente non impostato in comments-script.js:", currentRecipeIdInComments);
         }
     }
 
+    // Inizializza la visualizzazione dei commenti quando il modal viene caricato
     displayComments();
 };
