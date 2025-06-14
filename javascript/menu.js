@@ -1,4 +1,3 @@
-
 const staticRecipesArray = [
     { id: 'spaghetti-pomodoro', name: 'Spaghetti al Pomodoro', image: 'https://via.placeholder.com/180x120/4CAF50?text=Spaghetti', ingredients: `...`, instructions: `...`, category: 'Primi' },
     { id: 'risotto-funghi', name: 'Risotto ai Funghi', image: 'https://via.placeholder.com/180x120/FFD700?text=Risotto+Funghi', ingredients: `...`, instructions: `...`, category: 'Primi' },
