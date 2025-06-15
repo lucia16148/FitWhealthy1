@@ -1,3 +1,4 @@
+/* Reset di base */
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +6,10 @@
 }
 
 body, html {
-    height: 90%;
+    height: 100%;
     font-family: "Times New Roman", sans-serif;
+    background-color: #f4f4f4;
 }
-
 
 /* Navbar */
 .navbar {
@@ -33,7 +34,6 @@ body, html {
 .nav-buttons {
     display: flex;
     gap: 10px;
-    flex-wrap: nowrap;
     align-items: center;
 }
 
@@ -47,22 +47,13 @@ body, html {
     cursor: pointer;
     border-radius: 6px;
     text-decoration: none;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
     transition: background-color 0.3s ease;
+    display: inline-block;
 }
 
 .nav-btn:hover {
     background-color: #45a049;
 }
-
-.content {
-    padding: 50px 40px 120px;
-    min-height: 40vh;
-}
-
 
 /* Footer */
 .footer {
@@ -77,58 +68,75 @@ body, html {
     box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
 }
 
-
-/* Homepage layout */
+/* ===============================
+   HOMEPAGE
+================================== */
 .homepage {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 10px 10px 20px;
-    flex-wrap: wrap;
+    padding: 110px 60px 80px; /* meno spazio sopra, più sotto */
+    min-height: calc(100vh - 160px); /* spazio per navbar e footer */
+    gap: 60px;
+    background-color: transparent;
 }
 
-.hero-text {
-    flex: 1 1 50%;
+/* Colonna testo a sinistra */
+.homepage .text-column {
+    flex: 1;
+    text-align: left;
 }
 
-.hero-text h1 {
-    font-size: 6.6rem;
-    color: green;
-    margin-bottom: 25px;
+.homepage .text-column h1 {
+    font-size: 4.2rem; /* più grande */
+    margin-bottom: 30px;
+    color: #003366;
 }
 
-.hero-text p {
-    font-size: 2.8rem;
-    margin-bottom: 25px;
+.homepage .text-column p {
+    font-size: 2rem; /* più grande */
+    color: #333;
+    line-height: 1.6;
 }
 
-.hero-image {
-    flex: 1 1 30%;
-    text-align: center;
+/* Colonna logo a destra */
+.homepage .logo-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-image img {
-    max-width: 655px;
+.homepage .logo-column img {
+    max-width: 460px; /* logo più grande */
     height: auto;
 }
 
-/* Link login */
+/* Spazio unico per il link sotto le colonne */
 .login-link-container {
     width: 100%;
     text-align: center;
-    margin-top: 1px;
-    margin-bottom: 80px; /* stacca dal footer */
+    padding-top: 40px;
+    padding-bottom: 100px; /* più spazio dal footer */
 }
 
-.login-link {
-    color: blue;
-    font-size: 1.4rem;
-    font-weight: bold;
+.login-link-container a.login-link {
+    color: #003366;
+    font-size: 1.6rem;
+    font-weight: 600;
     text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
+.login-link-container a.login-link:hover {
+    color: #0056b3;
+}
 
-/* Layout login */
+/* ===============================
+   LOGIN
+================================== */
 .login-content {
     display: flex;
     justify-content: center;
@@ -186,8 +194,9 @@ body, html {
     background-color: #2a009c;
 }
 
-
-/* Layout registrazione */
+/* ===============================
+   SIGNIN / REGISTRATION
+================================== */
 .registration-content {
     display: flex;
     justify-content: center;
@@ -226,7 +235,7 @@ body, html {
     font-size: 15px;
 }
 
-/* Link Sign In bottone */
+/* Pulsante registrazione */
 .registration-box-button {
     display: inline-block;
     width: 100%;
@@ -245,10 +254,3 @@ body, html {
 .registration-box-button:hover {
     background-color: #2a009c;
 }
-
-
-
-
-
-
-

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grafico Periodo</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">FitWhealthy</div>
+    <div class="nav-buttons">
+        <a href="area_personale.html" class="nav-btn">Area Personale</a>
+        <a href="forum_ricette.html" class="nav-btn">Forum Ricette</a>
+        <a href="esercizi.html" class="nav-btn">Esercizi</a>
+        <a href="forum_esercizi.html" class="nav-btn">Forum Esercizi</a>
+        <a href="community.html" class="nav-btn">Community</a>
+    </div>
+</nav>
+
+<main class="content split-layout grafico-periodo-layout">
+    <section class="left-panel grafico-periodo-left">
+        <h1>Grafico del Periodo Selezionato</h1>
+        <div class="graph-box">
+            <img src="graficoPeriodoIUM.png" alt="Grafico periodo selezionato" class="grafico-periodo-img"/>
+        </div>
+    </section>
+
+    <section class="right-panel align-left-text">
+        <h2>Seleziona le Metriche</h2>
+        <form id="metrics-form">
+            <label><input type="checkbox" id="metric1" name="metric" value="metric1"> Peso</label>
+            <label><input type="checkbox" id="metric2" name="metric" value="metric2"> Acqua</label>
+            <label><input type="checkbox" id="metric3" name="metric" value="metric3"> Esercizi</label>
+            <button type="button" id="viewGraphButton" class="nav-btn">VISUALIZZA</button>
+        </form>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>© 2025 FitWhealthy. Tutti i diritti riservati.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
