@@ -288,18 +288,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const typeDisplayName = recipe.type.charAt(0).toUpperCase() + recipe.type.slice(1);
                 backButton.innerHTML = `&lt; ${typeDisplayName}`;
             } else if (backButton) {
-                backButton.href = 'index.html';
+                backButton.href = 'mainpageloggato.html';
                 backButton.innerHTML = `&lt; HomePage`;
             }
 
-            // Mostra/nascondi il pulsante elimina solo per le ricette create dall'utente loggato
-            const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
-            if (deleteButton && loggedInUser && recipe.creatorId && loggedInUser.email === recipe.creatorId) { // Aggiunta check recipe.creatorId
-                deleteButton.style.display = 'block';
-                deleteButton.dataset.recipeId = currentRecipeId; // Memorizza l'ID per la cancellazione
-            } else if (deleteButton) {
-                deleteButton.style.display = 'none';
-            }
 
 
         } else {
@@ -309,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('recipe-image').src = '';
             document.getElementById('recipe-image').alt = '';
             if (likeButton) likeButton.style.display = 'none'; // Nasconde il like button se ricetta non trovata
-            if (deleteButton) deleteButton.style.display = 'none'; // Nasconde il delete button
             if (commentButton) commentButton.style.display = 'none'; // Nasconde il comment button
         }
     }
@@ -339,51 +330,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Aggiorna anche la visibilità del pulsante elimina
             const recipe = getRecipeDetailsById(currentRecipeId);
             const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
-            if (deleteButton && loggedInUser && recipe && recipe.creatorId && loggedInUser.email === recipe.creatorId) { // Aggiunta check recipe existence
-                deleteButton.style.display = 'block';
-            } else if (deleteButton) {
-                deleteButton.style.display = 'none';
-            }
+            // if (deleteButton && loggedInUser && recipe && recipe.creatorId && loggedInUser.email === recipe.creatorId) { // Aggiunta check recipe existence
+            //     deleteButton.style.display = 'block';
+            // } else if (deleteButton) {
+            //     deleteButton.style.display = 'none';
+            //}
         }
     };
-
-
-    // Listener per il pulsante "Elimina Ricetta" (solo per ricette custom dell'utente)
-    if (deleteButton) {
-        deleteButton.addEventListener('click', () => {
-            if (confirm('Sei sicuro di voler eliminare questa ricetta? Questa azione non può essere annullata.')) {
-                const recipeIdToDelete = deleteButton.dataset.recipeId;
-                let customRecipes = JSON.parse(sessionStorage.getItem('customRecipes')) || [];
-                const updatedRecipes = customRecipes.filter(recipe => recipe.id !== recipeIdToDelete);
-
-                if (updatedRecipes.length < customRecipes.length) {
-                    sessionStorage.setItem('customRecipes', JSON.stringify(updatedRecipes));
-
-                    // Rimuovi l'ID della ricetta dai createdRecipeIds dell'utente
-                    let loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
-                    if (loggedInUser && loggedInUser.email) {
-                        loggedInUser.createdRecipeIds = (loggedInUser.createdRecipeIds || []).filter(id => id !== recipeIdToDelete); // Assicurati che sia un array
-                        saveUserToLocalStorage(loggedInUser);
-                    }
-
-                    alert('Ricetta eliminata con successo!');
-                    // Notifica il sistema di sincronizzazione globale per aggiornare le altre UI
-                    if (typeof window.refreshAllRecipeDisplays === 'function') {
-                        window.refreshAllRecipeDisplays();
-                    }
-                    // Reindirizza alla pagina delle ricette di quel tipo o alla homepage
-                    const deletedRecipe = getRecipeDetailsById(recipeIdToDelete);
-                    if (deletedRecipe && recipeTypeToPageMap[deletedRecipe.type]) {
-                        window.location.href = recipeTypeToPageMap[deletedRecipe.type];
-                    } else {
-                        window.location.href = 'index.html'; // Fallback
-                    }
-                } else {
-                    alert('Errore: Ricetta non trovata per l\'eliminazione.');
-                }
-            }
-        });
-    }
 
 
     // Listener per il bottone "Add" (se presente, solitamente non nella pagina dettagli)
