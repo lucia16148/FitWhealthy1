@@ -149,16 +149,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleLogout(event) {
         event.preventDefault();
-        sessionStorage.removeItem('loggedInUser');
 
         Swal.fire({
-            icon: 'info',
-            title: 'Logout effettuato',
-            text: 'Sei stato disconnesso con successo.',
-            confirmButtonText: 'OK'
-        }).then(() => {
-            updateLoginLogoutLink();
-            window.location.href = 'mainpageloggato.html';
+            title: 'Sei sicuro di voler uscire?',
+            text: 'La sessione verrà chiusa.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sì, esci',
+            cancelButtonText: 'Annulla'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                sessionStorage.removeItem('loggedInUser');
+
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Logout effettuato',
+                    text: 'Sei stato disconnesso con successo.',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    updateLoginLogoutLink();
+                    window.location.href = 'mainpage.html'; // <- Vai a mainpage.html
+                });
+            }
         });
     }
 
