@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = targetPage;
             } else {
                 alert('Tipo di ricetta non riconosciuto, reindirizzamento alla homepage.');
-                window.location.href = 'index.html'; // Fallback
+                window.location.href = 'mainpageloggato.html'; // Fallback
             }
         });
     }
