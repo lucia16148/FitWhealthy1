@@ -1,17 +1,29 @@
 const staticRecipesArray = [
-    { id: 'spaghetti-pomodoro', name: 'Spaghetti al Pomodoro', image: 'https://via.placeholder.com/180x120/4CAF50?text=Spaghetti', ingredients: `...`, instructions: `...`, category: 'Primi' },
-    { id: 'risotto-funghi', name: 'Risotto ai Funghi', image: 'https://via.placeholder.com/180x120/FFD700?text=Risotto+Funghi', ingredients: `...`, instructions: `...`, category: 'Primi' },
-    { id: 'filetto-pesce', name: 'Filetto di pesce al forno', image: '../image/Salmone-al-forno-04082023-buttalapasta.it_-1024x683.jpg', ingredients: `...`, instructions: `...`, category: 'Secondi' },
-    { id: 'pollo-limone', name: 'Pollo al Limone', image: 'https://via.placeholder.com/180x120/ADD8E6?text=Pollo+Limone', ingredients: `...`, instructions: `...`, category: 'Secondi' },
-    { id: 'orata-cartoccio', name: 'Orata al cartoccio', image: 'https://via.placeholder.com/180x120/4CAF50?text=Orata+al+cartoccio', ingredients: `...`, instructions: `...`, category: 'Secondi' },
-    { id: 'insalata-pollo', name: 'Insalata di pollo', image: 'https://via.placeholder.com/180x120/4CAF50?text=Insalata+di+pollo', ingredients: `...`, instructions: `...`, category: 'Secondi' },
-    { id: 'carne-pizzaiola', name: 'Carne alla pizzaiola', image: 'https://via.placeholder.com/180x120/4CAF50?text=Carne+pizzaola', ingredients: `...`, instructions: `...`, category: 'Secondi' },
-    { id: 'calamari-limone', name: 'Calamari al limone', image: 'https://via.placeholder.com/180x120/4CAF50?text=Calamari+limone', ingredients: `...`, instructions: `...`, category: 'Secondi' },
-    { id: 'pollo-curry', name: 'Pollo al curry', image: 'https://via.placeholder.com/180x120/4CAF50?text=Pollo+curry', ingredients: `...`, instructions: `...`, category: 'Secondi' },
-    { id: 'tiramisu', name: 'Tiramisù Classico', image: 'https://via.placeholder.com/180x120/DAA520?text=Tiramisu', ingredients: `...`, instructions: `...`, category: 'Dolci' },
-    { id: 'patate-forno', name: 'Patate al Forno', image: 'https://via.placeholder.com/180x120/FFA500?text=Patate+Forno', ingredients: `...`, instructions: `...`, category: 'Contorni' }
-    // Aggiungi qui tutte le altre ricette
+        { "id": "spaghetti-pomodoro", "name": "Spaghetti al Pomodoro", "image": "../image/pasta-al-pomodoro-dietetica-1200x799.jpg.webp", "ingredients": "", "instructions": "", "category": "Primi" },
+        { "id": "eliche-peperoni-fave-ricotta", "name": "Eliche con peperoni, fave e ricotta", "image": "../image/eliche-con-peperoni-fave-e-ricotta.webp", "ingredients": "", "instructions": "", "category": "Primi" },
+        { "id": "filetto-pesce", "name": "Filetto di pesce al forno", "image": "../image/Salmone-al-forno-04082023-buttalapasta.it_-1024x683.jpg", "ingredients": "", "instructions": "", "category": "Secondi" },
+        { "id": "risotto-funghi", "name": "Risotto ai Funghi", "image": "../image/FullSizeRender-1-7-scaled.jpg", "ingredients": "", "instructions": "", "category": "Primi" },
+        { "id": "orecchiette-tonno-zucchine", "name": "Orecchiette tiepide con verdure e tonno", "image": "../image/orecchiette-tiepide-e-verdure-allolio-aromatico.webp", "ingredients": "", "instructions": "", "category": "Primi" },
+        { "id": "strozzapreti-salmone-fiori-zucca-acciuga", "name": "Strozzapreti salmone, fiori di zucca e acciuga", "image": "../image/Strozzapreti salmone, fiori di zucca e acciuga.webp", "ingredients": "", "instructions": "", "category": "Primi" },
+        { "id": "pasta-carciofi-pancetta", "name": "Pasta con carciofi e pancetta", "image": "../image/Pasta-carciofi-e-pancetta-26122024-buttalapasta.it_.jpg", "ingredients": "", "instructions": "", "category": "Primi" },
+        { "id": "gnocchi-pesto", "name": "Gnocchi al pesto", "image": "../image/th.jpg", "ingredients": "", "instructions": "", "category": "Primi" },
+        { "id": "platessa-zucchine-mandorle", "name": "Filetti di platessa con zucchine e mandorle", "image": "../image/filetti-di-platessa-mandorle-zucchine.jpg", "ingredients": "", "instructions": "", "category": "Secondi" },
+        { "id": "orata-cartoccio", "name": "Orata al Cartoccio al Forno", "image": "../image/orata-pomodori-olive-16032024-buttalapasta.it_.jpg", "ingredients": "", "instructions": "", "category": "Secondi" },
+        { "id": "insalata-pollo", "name": "Insalata di pollo", "image": "../image/Insalata-di-pollo-allitaliana-27062023-buttalapasta.it_-1024x683.jpg", "ingredients": "", "instructions": "", "category": "Secondi" },
+        { "id": "carne-pizzaiola", "name": "Carne alla Pizzaiola", "image": "../image/Carne-alla-pizzaiola_450x300.jpg", "ingredients": "", "instructions": "", "category": "Secondi" },
+        { "id": "calamari-limone", "name": "Calamari al Limone", "image": "../image/Calamari-al-limone.jpg", "ingredients": "", "instructions": "", "category": "Secondi" },
+        { "id": "tacchino-zucchine-birra", "name": "Tacchino con Zucchine alla Birra", "image": "../image/tacchino-con-zucchine.jpg", "ingredients": "", "instructions": "", "category": "Secondi" },
+        { "id": "insalata-finocchi-arance", "name": "Insalata di Finocchi e Arance", "image": "../image/Insalata_Finocchi_Arance.jpg", "ingredients": "", "instructions": "", "category": "Contorni" },
+        { "id": "patate-forno", "name": "Patate al Forno", "image": "../image/Patate.jpg", "ingredients": "", "instructions": "", "category": "Contorni" },
+        { "id": "fiori-zucca-gratinati-forno", "name": "Fiori di Zucca Gratinati al Forno", "image": "../image/Fiori-di-zucca-al-forno-0D6A9016.webp", "ingredients": "", "instructions": "", "category": "Contorni" },
+        { "id": "fagiolini-carote-sesamo", "name": "Fagiolini con carote al sesamo", "image": "../image/1123_carote.webp", "ingredients": "", "instructions": "", "category": "Contorni" },
+        { "id": "pure-patate-light", "name": "Purè di patate LIGHT", "image": "../image/purepatate.jpg", "ingredients": "", "instructions": "", "category": "Contorni" },
+        { "id": "cheesecake-light", "name": "Cheesecake Light", "image": "../image/SH_cheesecake_light.jpg.webp", "ingredients": "", "instructions": "", "category": "Dolci" },
+        { "id": "muffin-leggeri", "name": "Muffin Leggeri", "image": "../image/SH_muffin_light.jpg.webp", "ingredients": "", "instructions": "", "category": "Dolci" },
+        { "id": "torta-carote", "name": "Torta di Carote", "image": "../image/torta-di-carote-still-life-2.webp", "ingredients": "", "instructions": "", "category": "Dolci" },
+        { "id": "crema-caffe-acqua", "name": "Crema di caffè all’acqua", "image": "../image/crema_caffe.webp", "ingredients": "", "instructions": "", "category": "Dolci" }
 ];
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -47,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (button) {
             if (isLiked) {
                 button.classList.add('liked');
-                button.textContent = '❤️'; // Cuore pieno
+                button.textContent = '♥'; // Cuore pieno
             } else {
                 button.classList.remove('liked');
                 button.textContent = '♡'; // Cuore vuoto
@@ -116,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Aggiungi qui il listener per il click sull'intera card
         item.addEventListener('click', () => {
-            window.location.href = `dettagli-ricetta.html?id=${recipe.id}`;
+            window.location.href = `DettagliRicetta.html?id=${recipe.id}`;
         });
 
         return item;

@@ -8,26 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
         const path = window.location.pathname;
         if (path.includes('RicettePrimi.html')) return 'primo';
         if (path.includes('RicetteSecondi.html')) return 'secondo';
-        if (path.includes('dolci.html')) return 'dolce';
-        if (path.includes('contorni.html')) return 'contorno';
+        if (path.includes('RicetteDolci.html')) return 'dolce';
+        if (path.includes('RicetteContorni.html')) return 'contorno';
         return null;
     }
     const currentPageType = getPageRecipeType();
 
     // --- DATABASE DELLE RICETTE STATICHE PREIMPOSTATE ---
     const staticRecipes = {
-        'spaghetti-pomodoro': { id: 'spaghetti-pomodoro', title: 'Spaghetti al Pomodoro', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Spaghetti', ingredients: `...`, instructions: `...`, type: 'primo' },
-        'risotto-funghi': { id: 'risotto-funghi', title: 'Risotto ai Funghi', imageUrl: 'https://via.placeholder.com/180x120/FFD700?text=Risotto+Funghi', ingredients: `...`, instructions: `...`, type: 'primo' },
-        'filetto-pesce': { id: 'filetto-pesce', title: 'Filetto di pesce al forno', imageUrl: '../image/Salmone-al-forno-04082023-buttalapasta.it_-1024x683.jpg', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'pollo-limone': { id: 'pollo-limone', title: 'Pollo al Limone', imageUrl: 'https://via.placeholder.com/180x120/ADD8E6?text=Pollo+Limone', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'orata-cartoccio': { id: 'orata-cartoccio', title: 'Orata al cartoccio', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Orata+al+cartoccio', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'insalata-pollo': { id: 'insalata-pollo', title: 'Insalata di pollo', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Insalata+di+pollo', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'carne-pizzaiola': { id: 'carne-pizzaiola', title: 'Carne alla pizzaiola', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Carne+pizzaola', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'calamari-limone': { id: 'calamari-limone', title: 'Calamari al limone', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Calamari+limone', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'pollo-curry': { id: 'pollo-curry', title: 'Pollo al curry', imageUrl: 'https://via.placeholder.com/180x120/4CAF50?text=Pollo+curry', ingredients: `...`, instructions: `...`, type: 'secondo' },
-        'tiramisu': { id: 'tiramisu', title: 'Tiramisù Classico', imageUrl: 'https://via.placeholder.com/180x120/DAA520?text=Tiramisu', ingredients: `...`, instructions: `...`, type: 'dolce' },
-        'patate-forno': { id: 'patate-forno', title: 'Patate al Forno', imageUrl: 'https://via.placeholder.com/180x120/FFA500?text=Patate+Forno', ingredients: `...`, instructions: `...`, type: 'contorno' }
-        // ... AGGIUNGI QUI TUTTE LE TUE RICETTE STATICHE ESISTENTI
+        'spaghetti-pomodoro': { id: 'spaghetti-pomodoro', title: 'Spaghetti al Pomodoro', imageUrl: '../image/pasta-al-pomodoro-dietetica-1200x799.jpg.webp', ingredients: ``, instructions: ``, type: 'primo' },
+        'eliche-peperoni-fave-ricotta': { id: 'eliche-peperoni-fave-ricotta', title: 'Eliche con peperoni, fave e ricotta', imageUrl: '../image/eliche-con-peperoni-fave-e-ricotta.webp', ingredients: ``, instructions: ``, type: 'primo' },        'filetto-pesce': { id: 'filetto-pesce', title: 'Filetto di pesce al forno', imageUrl: '../image/Salmone-al-forno-04082023-buttalapasta.it_-1024x683.jpg', ingredients: `...`, instructions: `...`, type: 'secondo' },
+        'risotto-funghi': { id: 'risotto-funghi', title: 'Risotto ai Funghi', imageUrl: '../image/FullSizeRender-1-7-scaled.jpg', ingredients: ``, instructions: ``, type: 'primo' },
+        'orecchiette-tonno-zucchine': { id: 'orecchiette-tonno-zucchine', title: 'Orecchiette tiepide con verdure e tonno', imageUrl: '../image/orecchiette-tiepide-e-verdure-allolio-aromatico.webp', ingredients: ``, instructions: ``, type: 'primo' },
+        'strozzapreti-salmone-fiori-zucca-acciuga': { id: 'strozzapreti-salmone-fiori-zucca-acciuga', title: 'Strozzapreti salmone, fiori di zucca e acciuga', imageUrl: '../image/Strozzapreti salmone, fiori di zucca e acciuga.webp', ingredients: ``, instructions: ``, type: 'primo' },
+        'pasta-carciofi-pancetta': { id: 'pasta-carciofi-pancetta', title: 'Pasta con carciofi e pancetta', imageUrl: '../image/Pasta-carciofi-e-pancetta-26122024-buttalapasta.it_.jpg', ingredients: ``, instructions: ``, type: 'primo' },
+        'gnocchi-pesto': { id: 'gnocchi-pesto', title: 'Gnocchi al pesto', imageUrl: '../image/th.jpg', ingredients: ``, instructions: ``, type: 'primo' },
+        'filetto-pesce': { id: 'filetto-pesce', title: 'Filetto di pesce al forno', imageUrl: '../image/Salmone-al-forno-04082023-buttalapasta.it_-1024x683.jpg', ingredients: ``, instructions: ``, type: 'secondo' },
+        'platessa-zucchine-mandorle': { id: 'platessa-zucchine-mandorle', title: 'Filetti di platessa con zucchine e mandorle', imageUrl: '../image/filetti-di-platessa-mandorle-zucchine.jpg', ingredients: ``, instructions: ``, type: 'secondo' },
+        'orata-cartoccio': { id: 'orata-cartoccio', title: 'Orata al Cartoccio al Forno', imageUrl: '../image/orata-pomodori-olive-16032024-buttalapasta.it_.jpg', ingredients: ``, instructions: ``, type: 'secondo' },
+        'insalata-pollo': { id: 'insalata-pollo', title: 'Insalata di pollo', imageUrl: '../image/Insalata-di-pollo-allitaliana-27062023-buttalapasta.it_-1024x683.jpg', ingredients: ``, instructions: ``, type: 'secondo' },
+        'carne-pizzaiola': { id: 'carne-pizzaiola', title: 'Carne alla Pizzaiola', imageUrl: '../image/Carne-alla-pizzaiola_450x300.jpg', ingredients: ``, instructions: ``, type: 'secondo' },
+        'calamari-limone': { id: 'calamari-limone', title: 'Calamari al Limone', imageUrl: '../image/Calamari-al-limone.jpg', ingredients: ``, instructions: ``, type: 'secondo' },
+        'tacchino-zucchine-birra': { id: 'tacchino-zucchine-birra', title: 'Tacchino con Zucchine alla Birra', imageUrl: '../image/tacchino-con-zucchine.jpg', ingredients: ``, instructions: ``, type: 'secondo' },
+        'insalata-finocchi-arance': { id: 'insalata-finocchi-arance', title: 'Insalata di Finocchi e Arance', imageUrl: '../image/Insalata_Finocchi_Arance.jpg', ingredients: ``, instructions: ``, type: 'contorno' },
+        'patate-forno': { id: 'patate-forno', title: 'Patate al Forno', imageUrl: '../image/Patate.jpg', ingredients: ``, instructions: ``, type: 'contorno' },
+        'fiori-zucca-gratinati-forno': { id: 'fiori-zucca-gratinati-forno', title: 'Fiori di Zucca Gratinati al Forno', imageUrl: '../image/Fiori-di-zucca-al-forno-0D6A9016.webp', ingredients: ``, instructions: ``, type: 'contorno' },
+        'fagiolini-carote-sesamo': { id: 'fagiolini-carote-sesamo', title: 'Fagiolini con carote al sesamo', imageUrl: '../image/1123_carote.webp', ingredients: ``, instructions: ``, type: 'contorno' },
+        'pure-patate-light': { id: 'pure-patate-light', title: 'Purè di patate LIGHT', imageUrl: '../image/purepatate.jpg', ingredients: ``, instructions: ``, type: 'contorno' },
+        'cheesecake-light': { id: 'cheesecake-light', title: 'Cheesecake Light', imageUrl: '../image/SH_cheesecake_light.jpg.webp', ingredients: ``, instructions: ``, type: 'dolce' },
+        'muffin-leggeri': { id: 'muffin-leggeri', title: 'Muffin Leggeri', imageUrl: '../image/SH_muffin_light.jpg.webp', ingredients: ``, instructions: ``, type: 'dolce' },
+        'torta-carote': { id: 'torta-carote', title: 'Torta di Carote', imageUrl: '../image/torta-di-carote-still-life-2.webp', ingredients: ``, instructions: ``, type: 'dolce' },
+        'crema-caffe-acqua': { id: 'crema-caffe-acqua', title: 'Crema di caffè all’acqua', imageUrl: '../image/crema_caffe.webp', ingredients: ``, instructions: ``, type: 'dolce' },
     };
 
     const commentsModal = document.getElementById('comments-modal');

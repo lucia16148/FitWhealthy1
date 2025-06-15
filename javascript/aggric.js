@@ -4,8 +4,8 @@
 const recipeTypeToPageMap = {
     'primo': 'RicettePrimi.html',
     'secondo': 'RicetteSecondi.html',
-    'dolce': 'dolci.html',
-    'contorno': 'contorni.html'
+    'dolce': 'RicetteDolci.html',
+    'contorno': 'RicetteContorni.html'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
