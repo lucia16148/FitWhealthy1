@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Community</title>
+    <link rel="stylesheet" href="/css/community.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+<div id="header-container"></div>
+
+<main class="community-content">
+    <h1>Benvenuto nella Community!</h1>
+
+    <!-- Sezione per creare una nuova discussione -->
+    <section class="post-discussion">
+        <h2>Crea una nuova Discussione</h2>
+        <form id="discussion-form">
+            <input type="text" id="discussion-title" placeholder="Titolo della discussione" required />
+            <textarea id="discussion-content" rows="4" placeholder="Scrivi il contenuto della discussione..." required></textarea>
+            <input type="text" id="username" placeholder="Il tuo nome" required />
+            <button type="submit" id="submit-discussion-button">Crea Discussione</button>
+        </form>
+    </section>
+
+    <!-- Sezione Discussioni -->
+    <section class="discussion-board">
+        <h2>Discussioni</h2>
+        <div id="discussion-list" class="discussion-list">
+            <!-- Le discussioni appariranno qui -->
+        </div>
+    </section>
+
+
+</main>
+
+<div id="footer-container"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+</script>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        });
+</script>
+
+<script src="/javascript/community.js"></script>
+
+</body>
+</html>

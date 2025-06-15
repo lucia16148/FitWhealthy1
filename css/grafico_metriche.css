@@ -1,0 +1,55 @@
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: "Times New Roman", sans-serif;
+    background-color: #ffffff;
+}
+
+/* Layout principale */
+.content.grafico-metriche-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 20px 60px;
+    min-height: 90vh;
+}
+
+/* Contenitore del grafico */
+.grafico-metriche-container {
+    max-width: 600px;
+    width: 65%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.grafico-metriche-container img,
+#grafico canvas {
+    max-width: 55%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Bottone download */
+.btn-download {
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-download:hover {
+    background-color: #45a049;
+}

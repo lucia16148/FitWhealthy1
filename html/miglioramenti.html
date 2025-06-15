@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Miglioramenti</title>
+    <link rel="stylesheet" href="/css/miglioramenti.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+<div id="header-container"></div>
+
+<main class="content split-layout">
+    <section class="left-panel">
+        <h1 class="main-title">I Miei Miglioramenti</h1>
+        <div class="grafico">
+            <img src="../image/graficoGeneraleIUM.png" alt="Grafico Complessivo" class="graph-box" />
+        </div>
+    </section>
+
+    <section class="right-panel">
+        <br><br><br><br>
+        <label for="data-inizio">Data Inizio:</label>
+        <input type="date" id="data-inizio" required />
+
+        <label for="data-fine">Data Fine:</label>
+        <input type="date" id="data-fine" required />
+
+        <a id="calcolaLink" class="nav-btn btn-calcola disabled" href="grafico_periodo.html" tabindex="-1" aria-disabled="true">CALCOLA</a>
+    </section>
+
+</main>
+
+<div id="footer-container"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+</script>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        });
+</script>
+
+</body>
+</html>
