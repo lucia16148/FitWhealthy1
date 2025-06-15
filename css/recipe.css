@@ -1,0 +1,416 @@
+/* Stili Generali */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    padding: 20px;
+
+}
+
+.back-home {
+    color: #007bff;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    position: relative;
+}
+
+.page-title {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+/* Recipe Banner */
+.recipe-banner {
+    display: flex;
+    background-color: #FFC107; /* Giallo del banner*/
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 250px; /* Altezza fissa per il banner, regolabile per "un po' più piccolo" */
+}
+
+.banner-text {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Allinea a sinistra il testo */
+    color: #333; /* Colore del testo nero*/
+    text-align: left;
+}
+
+.banner-text h1 {
+    font-size: 2.5em; /* Dimensione del titolo della ricetta*/
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.banner-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px; /* Spazio tra titolo e icone */
+}
+
+.banner-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+
+.banner-actions .like-button {
+    font-size: 2em; /* Dimensione del cuore */
+    color: #4CAF50; /* Verde, come il bordo delle immagini */
+}
+
+.banner-actions .comment-button img {
+    width: 35px; /* Dimensione dell'icona del commento*/
+    height: 35px; /* Dimensione dell'icona del commento*/
+    vertical-align: middle;
+    /* Se l'immagine è scura e il banner è giallo, potresti voler invertirla o filtrarla */
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(280deg) brightness(110%) contrast(100%); /* Esempio per icona bianca */
+}
+
+
+.banner-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assicura che l'immagine copra lo spazio */
+    display: block;
+    border-radius: 0 8px 8px 0; /* Angoli arrotondati solo a destra */
+    /* Bordo verde intorno all'immagine */
+    border: 4px solid #4CAF50;
+    box-sizing: border-box; /* Include il bordo nella dimensione */
+}
+
+/* Sezioni Ingredients e Instructions */
+.recipe-section {
+    background-color: #fff; /* Sfondo bianco per le sezioni */
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.recipe-section h2 {
+    color: #333; /* Titolo nero */
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.ingredients-list h3 {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.ingredients-list ul, .instructions-list ol {
+    list-style-position: inside; /* Punti/numeri dentro il padding */
+    padding-left: 0;
+    margin: 0;
+}
+
+.ingredients-list li, .instructions-list li {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.recipe-link {
+    text-decoration: none;
+    color: inherit; /* Eredita il colore del testo dai genitori */
+    display: flex; /* Mantiene il layout flexbox dell'elemento genitore */
+    width: 100%; /* Assicura che il link occupi tutta la larghezza dell'item */
+    height: 100%; /* Assicura che il link occupi tutta l'altezza dell'item */
+}
+.recipe-link:hover {
+    /* Puoi aggiungere effetti hover qui se vuoi */
+    text-decoration: none;
+}
+
+.comment-button img {
+    width: 30px; /* Imposta la larghezza dell'immagine del commento */
+    height: 30px; /* Imposta l'altezza dell'immagine del commento */
+    vertical-align: middle; /* Aiuta ad allineare l'immagine */
+    /* Potresti voler applicare un filtro per colorare l'immagine se è monocromatica */
+    /* filter: invert(49%) sepia(87%) saturate(583%) hue-rotate(69deg) brightness(97%) contrast(87%); /* Esempio per colorare di verde */
+}
+
+/* Add Button (Floating) - Mantenuto per consistenza */
+.add-button {
+    position: fixed;
+    bottom: 40px;
+    left: 230px;
+    background-color: green;
+    color: white;
+    font-size: 3.5em;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.modal-overlay {
+    display: none; /* Nascosto di default. Sarà 'flex' per mostrarlo */
+    position: fixed; /* Si posiziona sopra tutto */
+    z-index: 1000; /* Assicurati che sia sopra altri elementi */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Abilita lo scroll se il contenuto è troppo lungo */
+    background-color: rgba(0,0,0,0.6); /* Sfondo nero semi-trasparente */
+    justify-content: center; /* Centra orizzontalmente il contenuto */
+    align-items: center; /* Centra verticalmente il contenuto */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Centra il modal se non c'è flex */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Larghezza del modal */
+    max-width: 700px; /* Larghezza massima */
+    border-radius: 10px;
+    position: relative; /* Per posizionare il pulsante di chiusura */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation-name: animatetop; /* Animazione di entrata */
+    animation-duration: 0.4s;
+}
+
+/* Animazione per l'apertura del modal */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+/* Pulsante di chiusura */
+.close-button {
+    color: #aaa;
+    float: right; /* Lo spinge a destra (vecchio metodo) */
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; /* Posizionamento rispetto al .modal-content */
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Stili per la sezione commenti all'interno del modal */
+.comments-section-in-modal h2, .comments-section-in-modal h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.comments-list {
+    background-color: #e9e9e9;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    max-height: 300px; /* Altezza massima per la scrollbar */
+    overflow-y: auto; /* Per commenti lunghi */
+}
+
+.comments-list p { /* Stile per "Nessun commento ancora..." */
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.comment-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start; /* Allinea l'avatar e il testo in alto */
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    background-color: #ccc; /* Placeholder per l'avatar */
+    flex-shrink: 0; /* Impedisce all'avatar di rimpicciolirsi */
+}
+
+.comment-body {
+    flex-grow: 1; /* Permette al corpo del commento di occupare lo spazio rimanente */
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.comment-text {
+    color: #333;
+    line-height: 1.5;
+    word-wrap: break-word; /* Va a capo se il testo è troppo lungo */
+}
+
+.add-comment-section {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.comment-input-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spazio tra textarea e bottone */
+    align-items: center; /* Centra orizzontalmente gli elementi interni */
+}
+
+#new-comment-text {
+    width: calc(100% - 20px); /* Regola larghezza con padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Permette all'utente di ridimensionare verticalmente */
+    font-size: 1em;
+    margin: 0; /* Rimuovi eventuali margini predefiniti */
+}
+
+.submit-comment-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: fit-content; /* Adatta la larghezza al contenuto del testo */
+    margin-top: 10px; /* Spazio dal textarea */
+}
+
+.submit-comment-button:hover {
+    background-color: #45a049;
+}
+/* Responsive Design */
+@media (max-width: 992px) {
+
+    .recipe-container {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        align-items: center;
+    }
+
+    .recipe-details {
+        padding: 20px;
+    }
+
+    #recipe-title {
+        font-size: 2em;
+    }
+
+    .content-section h2 {
+        font-size: 1.5em;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .recipe-banner {
+        flex-direction: column; /* Impila testo e immagine su schermi piccoli */
+        height: auto; /* Altezza automatica */
+    }
+
+    .banner-text {
+        align-items: center; /* Centra il testo su mobile */
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .banner-text h1 {
+        font-size: 2em;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 200px; /* Altezza fissa per l'immagine su mobile */
+    }
+
+    .banner-image img {
+        border-radius: 0; /* Nessun angolo arrotondato su mobile per la griglia */
+    }
+
+    .add-button {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 60px;
+        font-size: 3em;
+    }
+}

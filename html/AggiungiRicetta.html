@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitWhealty - Aggiungi Ricetta</title>
+  <link rel="stylesheet" href="/css/aggric.css">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+
+<body>
+<main class="container">
+  <aside class="sidebar">
+    <a href="Menu.html" class="back-home">&lt; Menu</a>
+  </aside>
+
+  <section class="content">
+    <h1 class="page-title">Aggiungi una nuova Ricetta</h1>
+
+    <div class="form-grid">
+      <div class="form-section recipe-title-input">
+        <h2>Titolo Ricetta</h2>
+        <input type="text" id="recipe-name" class="text-input" placeholder="Es: Spaghetti al Pomodoro">
+      </div>
+
+      <div class="form-section recipe-type-select">
+        <h2>Tipo di Ricetta</h2>
+        <select id="recipe-type" class="dropdown">
+          <option value="">Seleziona un tipo</option>
+          <option value="primo">Primo</option>
+          <option value="secondo">Secondo</option>
+          <option value="dolce">Dolce</option>
+          <option value="contorno">Contorno</option>
+        </select>
+      </div>
+
+      <div class="form-section image-upload">
+        <h2>Inserisci L'immagine</h2>
+        <div class="image-placeholder">
+          <input type="file" id="image-input" accept="image/*" style="display: none;">
+          <label for="image-input" class="upload-button">Sfoglia</label>
+        </div>
+      </div>
+
+      <div class="form-section instructions-section">
+        <h2>Istruzioni</h2>
+        <textarea class="text-area" placeholder="Inserisci i passaggi necessari per poter fare la ricetta"></textarea>
+      </div>
+
+      <div class="form-section ingredients-section">
+        <h2>Ingredients</h2>
+        <textarea class="text-area" placeholder="Inserire la lista di ingredienti necessari&#10;es:&#10;• 300 gr di farina&#10;• 150 ml acqua&#10;• 30 gr di olio"></textarea>
+      </div>
+    </div>
+
+    <button class="publish-button">Pubblica</button>
+  </section>
+</main>
+
+<script src="/javascript/recipe.js"></script>
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+<script src="/javascript/aggric.js"></script>
+<script src="/javascript/login.js"></script>
+
+</body>
+</html>

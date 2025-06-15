@@ -1,0 +1,262 @@
+/* Stili Generali */
+/* Stili Generali */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Sidebar (Come nelle pagine precedenti) */
+.sidebar {
+    width: 200px;
+    padding: 20px;
+}
+
+.back-home {
+    color: #007bff;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 3.5em;
+    font-weight: normal;
+}
+
+/* Griglia per i Form ingrandita */
+.form-grid {
+    display: grid;
+    /* Ho aumentato la larghezza delle colonne relative per ingrandire le sezioni */
+    grid-template-columns: 1.2fr 2fr; /* Colonna 1 più piccola, Colonna 2 più grande */
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px; /* Aumentata la larghezza massima della griglia */
+    margin-bottom: 30px;
+}
+
+.form-section {
+    background-color: #f0f0f0;
+    border: 3px solid #4CAF50;
+    border-radius: 8px;
+    padding: 25px; /* Aumentato il padding per un aspetto più grande */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2em; /* Aumentato la dimensione dei titoli delle sezioni */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Nuovi stili per il campo Titolo Ricetta */
+.recipe-title-input {
+    grid-column: 1 / 2; /* Prima colonna */
+    grid-row: 1 / 2; /* Prima riga */
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em; /* Dimensione del testo per il campo input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.text-input::placeholder {
+    color: #aaa;
+}
+
+/* Nuovi stili per il menù a tendina */
+.recipe-type-select {
+    grid-column: 1 / 2; /* Prima colonna */
+    grid-row: 2 / 3; /* Seconda riga, sotto il titolo ricetta */
+}
+
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em; /* Dimensione del testo per il dropdown */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none; /* Rimuove lo stile di default del dropdown su WebKit */
+    -moz-appearance: none; /* Rimuove lo stile di default del dropdown su Mozilla */
+    appearance: none; /* Rimuove lo stile di default del dropdown */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2C197.3L159.2%2C69.5c-3.6-3.6-7.8-5.4-12.3-5.4s-8.7%2C1.8-12.3%2C5.4L5.4%2C197.3c-7.2%2C7.2-7.2%2C18.9%2C0%2C26.1s18.9%2C7.2%2C26.1%2C0l110.1-110.1l110.1%2C110.1c7.2%2C7.2%2C18.9%2C7.2%2C26.1%2C0S294.2%2C204.5%2C287%2C197.3z%22%2F%3E%3C%2Fsvg%3E'); /* Freccia custom SVG */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px auto;
+}
+
+/* Sezione Inserisci Immagine */
+.image-upload {
+    grid-column: 1 / 2; /* Prima colonna */
+    grid-row: 3 / 4; /* Terza riga, sotto il dropdown */
+    min-height: 250px; /* Altezza minima aumentata per la sezione immagine */
+    justify-content: flex-start;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 180px; /* Altezza del riquadro "Sfoglia" aumentata */
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.upload-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 12px 25px; /* Padding aumentato */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em; /* Dimensione testo aumentata */
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    white-space: nowrap;
+}
+
+/* Sezione Istruzioni */
+.instructions-section {
+    grid-column: 2 / 3; /* Seconda colonna */
+    grid-row: 1 / 4; /* Si estende su tutte e tre le righe, coprendo tutti gli spazi sulla destra */
+    min-height: 600px; /* Altezza minima molto aumentata per le istruzioni */
+}
+
+/* Sezione Ingredients */
+.ingredients-section {
+    grid-column: 1 / 2; /* Prima colonna */
+    grid-row: 4 / 5; /* Quarta riga, sotto l'immagine */
+    min-height: 300px; /* Altezza minima aumentata per gli ingredienti */
+    justify-content: flex-start;
+}
+
+.text-area {
+    width: 100%;
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    padding: 10px; /* Aumentato il padding per la textarea */
+    font-size: 1.2em; /* Dimensione testo aumentata */
+    font-family: Arial, sans-serif;
+    outline: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+/* Bottone Pubblica */
+.publish-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.6em; /* Aumentato la dimensione del testo */
+    padding: 18px 50px; /* Aumentato il padding */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-top: 40px; /* Spazio maggiore sopra il bottone */
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.publish-button:hover {
+    background-color: #45a049;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .page-title {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; /* Una singola colonna su mobile */
+        gap: 20px;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .form-section {
+        grid-column: 1 / -1; /* Tutti gli elementi occupano una colonna intera */
+        grid-row: auto !important; /* Rimuovi la logica di row per impilare automaticamente */
+        min-height: auto;
+        padding: 15px;
+    }
+
+    /* Ordine degli elementi su mobile */
+    .recipe-title-input { order: 1; }
+    .recipe-type-select { order: 2; }
+    .image-upload { order: 3; }
+    .ingredients-section { order: 4; } /* Spostato ingredients prima di instructions per flusso naturale */
+    .instructions-section { order: 5; }
+
+
+    .image-placeholder {
+        height: 150px;
+    }
+
+    .text-input, .dropdown, .text-area {
+        font-size: 1.1em; /* Riduci leggermente i font su mobile */
+        padding: 8px;
+    }
+
+    .text-area {
+        min-height: 150px;
+    }
+
+    .publish-button {
+        font-size: 1.3em;
+        padding: 12px 30px;
+        margin-bottom: 10px;
+        margin-top: 30px; /* Spazio sul bottone su mobile */
+    }
+}

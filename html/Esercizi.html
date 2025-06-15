@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Trazioni</title>
+    <link rel="stylesheet" href="/css/DettagliEsercizi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<div id="header-container"></div>
+
+<div class="exercise-type">Trazioni</div>
+
+<div class="main-content">
+    <a href="#" class="back-button">←</a>
+
+    <div class="exercise-content">
+        <img src="/image/trazioni-alla-sbarra-a-presa-supina.jpg" alt="Trazioni" class="exercise-image">
+
+        <div class="exercise-description">
+            <p>
+                Per iniziare appenditi alla sbarra mettendo le mani ad una distanza pari a circa larghezza delle spalle con il pollice sopra alla sbarra.<br>
+                Una volta staccati i piedi tira rivolgendo il petto verso l’alto e arrivando fino a mento sopra alla sbarra.<br>
+                Le spalle partono da una posizione neutra e a mano a mano che tiri si deprimono, allontanandosi il più possibile dalle orecchie.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="footer-container"></div>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+</script>
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        });
+</script>
+<script>
+    // Dati esercizi
+    const esercizi = {
+        LatMachine: {
+            titolo: 'LatMachine',
+            descrizione: `
+        Posizionati seduto esattamente al di sotto del cavo.<br>
+        Il busto va tenuto sull’attenti, col petto in fuori.<br>
+        Schiena inarcata (non iperestesa), che va eventualmente a rilassarsi nella fase finale del movimento con le braccia in alto.<br>
+        Puoi utilizzare la presa inversa per accentuare la tensione sul Gran dorsale.<br>
+        Le scapole possono essere sia tenute sempre depresse oppure quando le braccia si distendono elevarle e deprimerle prima di tirare la sbarra verso di sé.<br>
+        Per quanto riguarda la respirazione, inspira alla fine della fase di risalita ed espira nella fase di discesa.
+      `,
+            immagine: '/image/20hours_lat-machine_large.jpg'
+        },
+        CrociCavi: {
+            titolo: 'Croci ai cavi',
+            descrizione: `
+        Posizione di partenza: braccia aperte e i cavi sono posti ad un’altezza leggermente più bassa delle spalle.<br>
+        .Le spalle devono essere depresse, leggermente addotte e il petto mantenuto in fuori.<br>
+        .Effettua un’adduzione dell’omero fino ad arrivare al massimo accorciamento possibile del gran pettorale.<br>
+        Allungare il pettorale fino ad arrivare alla posizione iniziale, mantenendo e richiamando ovviamente il corretto setup scapolare.<br>
+      `,
+            immagine: '/image/croci-ai-cavi-alti-in-piedi.jpg'
+        },
+        trazioni: {
+            titolo: 'Trazioni',
+            descrizione: `
+        Per iniziare appenditi alla sbarra mettendo le mani ad una distanza pari a circa larghezza delle spalle con il pollice sopra alla sbarra.<br>
+        Una volta staccati i piedi tira rivolgendo il petto verso l’alto e arrivando fino a mento sopra alla sbarra.<br>
+        Le spalle partono da una posizione neutra e a mano a mano che tiri si deprimono, allontanandosi il più possibile dalle orecchie.
+      `,
+            immagine: '/image/trazioni-alla-sbarra-a-presa-supina.jpg'
+        },
+        RemManubrio: {
+            titolo: 'Rematore con manubrio',
+            descrizione: `
+        Posiziona sulla panca il ginocchio e la mano opposta al lato da allenare.<br>
+        Inclina il tronco in avanti portandolo il più possibile parallelo al pavimento e mantenendo il bacino in linea con le spalle.<br>
+        Sposta la gamba omolaterale più indietro per lasciare spazio al manubrio quando questo viene sollevato.<br>
+        Da questa posizione, con il gomito completamente esteso, muovi l’omero verso l’alto (estensione) enfatizzando l’adduzione della scapola. È importante anche qui pensare a spingere in alto il gomito piuttosto che a “tirare su” il manubrio.
+      `,
+            immagine: '/image/REMATORE-MONOLATERALE-CON-MANUBRIO-DORSALI-GRAN-DORSALI-F-300x171.jpg'
+        },
+        CrociManu: {
+            titolo: 'Croci manubri',
+            descrizione: `
+        Sdraiati sulla panca e metti le spalle e le scapole nel corretto set-up.<br>
+        Appoggia per bene i piedi a terra, senza muoverli.<br>
+        Impugna i manubri tenendoli con le braccia stese verso l’alto con i gomiti stesi.<br>
+        Lentamente apri le braccia fino a formare un angolo di 90 gradi dalla posizione iniziale.<br>
+        Ritorna nella posizione inziale lentamente.<br>
+      `,
+            immagine: '/image/croci-con-manubri-su-panca-piana.jpg'
+        },
+        Pancapiana: {
+            titolo: 'Panca piana',
+            descrizione: `
+        Sdraiati sulla panca e metti le spalle e le scapole nel corretto set-up.<br>
+        Appoggia per bene i piedi a terra, senza muoverli.<br>
+        Impugna il bilanciere né troppo stretto né troppo largo.<br>
+        Stacca il bilanciere dal rack avendo cura di farlo mantenendo il corretto setup.<br>
+        Stendi i gomiti per permettere al carico di essere scaricato sullo schienale della panca.<br>
+        A questo punto scendi, e qui è fondamentale che mentre lo fai cerchi di mantenere il petto alto.<br>
+        Scendi fino a quando il bilanciere tocca il petto, a quel punto spingi.<br>
+        Stendi il gomito prima di ripartire con l’altra ripetizione.<br>
+      `,
+            immagine: '/image/distensioni-con-bilanciere-su-panca-piana.jpg'
+        },
+        Squat: {
+            titolo: 'Squat',
+            descrizione: `
+        Posizione di partenza: le ginocchia sono estese, i piedi larghi quanto la larghezza delle anche e leggermente extraruotati, testa e sguardo rivolti in avanti.<br>
+        Fase di discesa: piega ginocchia, anche e caviglie in modo controllato fino a quando la parte superiore della coscia è parallela al pavimento. Le ginocchia non dovrebbero superare eccessivamente le punte dei piedi.<br>
+        Fase di risalita: dovrebbe seguire la stessa dinamica della fase discesa nella direzione opposta, fino a stendere completamente le gambe.
+
+      `,
+            immagine: '/image/squat-a-corpo-libero.jpg'
+        },
+        Affondimanubri: {
+            titolo: 'Affondi manubri',
+            descrizione: `
+        Focalizzati sulla pressione che il piede esercita a terra mentre stai affondando col movimento<br>
+        Cerca sempre di mantenere l’inclinazione del busto in una posizione neutra, né troppo proiettato in avanti, né troppo proiettato in verticale.<br>
+        Il ginocchio della gamba posteriore (quella che non spinge e non è “attiva”) sfiora sempre il terreno.
+
+      `,
+            immagine: '/image/01d0c17a4da45dfe695065d420ed9822.jpg'
+        },
+        LegPress: {
+            titolo: 'Leg press',
+            descrizione: `
+        A partire da seduto con i piedi ben appoggiati sulla pedana, l’esercizio prevede di piegare le gambe fino a dove consentito dalla tua mobilità e di spingere allontanando la pedana fino alla posizione iniziale, tornando ad un’estensione completa di anca e ginocchio.
+      `,
+            immagine: '/image/lever-angled-leg-press-male-260nw-2586714377.webp'
+        },
+        Curlmanubri: {
+            titolo: 'Curl manubri',
+            descrizione: `
+        Posizione di partenza: braccia perpendicolari al suolo ed impugnatura neutra dei manubri<br>
+        Fase concentrica: prevede una flessione del gomito che termina al grado massimo di accorciamento muscolare del bicipite brachiale. Attenzione! È importante mantenere il gomito fermo e saldo attaccato al tronco, senza portarlo in avanti.<br>
+        Fase eccentrica: ripercorre la precedente e si basa sull’estensione dell’omero; il bicipite si oppone alla forza di gravità rallentando il movimento e mantenendo la tensione.<br>
+        Nel curl manubri devo flettere la spalla? No. Non solo non è necessario, ma può addirittura risultare controproducente.
+      `,
+            immagine: '/image/curl-su-panca-inclinata-600x321.jpg'
+        },
+        Spidercurl: {
+            titolo: 'Spider curl',
+            descrizione: `
+        Corpo in posizione prona su una panca “leggermente” inclinata (< 30°); avendo una panca sufficientemente alta, si potrebbe anche tenere piana. L’assetto è molto simile a quello delle croci a 90° su panca per i deltoidi posteriori;<br>
+        Le scapole vanno mantenute in posizione neutra, quindi non addotte, abdotte, elevate o depresse;<br>
+        Le braccia cadono perpendicolari al pavimento, e possono impugnare due manubri o un bilanciere<br>
+        con la spalla fissa ad un angolo di 90° e il gomito rimane in linea con la stessa, a questo punto si esegue la classica flessione del gomito per l’intero range di movimento articolare.
+      `,
+            immagine: '/image/08de39498b8f29edfa846fa01be4206e.jpg'
+        },
+        Pushdown: {
+            titolo: 'Push down',
+            descrizione: `
+        Sistemati non troppo vicino al cavo alto, a 3 piedi di distanza.<br>
+        Inclinati leggermente in avanti.<br>
+        Impugna bene la barra (a seconda dello strumento che scegli), il polso deve essere dritto.<br>
+        Le spalle sono basse, le ginocchia stese e le curve della schiena sono mantenute neutre.<br>
+        Fissa il gomito in un punto e parti con gomito in flessione: non fare mezzi movimenti ovvero non partire col gomito già quasi esteso.<br>
+        Mentre estendi verso il basso, pensa che il gomito rimanga fisso in un punto di fianco al tronco.<br>
+        Arriva in massima estensione di gomito e poi ritorna, accompagnando il movimento.
+      `,
+            immagine: '/image/push-down1.jpg'
+        },
+        Crunch: {
+            titolo: 'Crunch',
+            descrizione: `
+        Posizione iniziale: sdraiati sulla schiena con le ginocchia piegate e i piedi appoggiati a terra. Le mani possono stare dietro la testa (senza tirare il collo) o incrociate sul petto.<br>
+        Movimento: contrai gli addominali e solleva le spalle da terra di qualche centimetro, tenendo la zona lombare aderente al pavimento.<br>
+        Esecuzione: espira salendo, fai una breve pausa in alto e poi torna lentamente alla posizione iniziale inspirando.
+      `,
+            immagine: '/image/crunch-a-terra.jpg'
+        },
+        Legrise: {
+            titolo: 'Leg rise',
+            descrizione: `
+        Posizione di partenza:
+        Afferra una barra con presa in pronazione (palmi in avanti) alla larghezza delle spalle. Lascia che il corpo penda liberamente, mantenendo le scapole leggermente attive e le gambe dritte.<br>
+        Core attivo:Contrai gli addominali e stabilizza il busto per evitare oscillazioni. Il bacino non deve dondolare avanti e indietro.<br>
+        Movimento:Solleva lentamente le gambe tese (o leggermente piegate se sei principiante) fino a portarle a circa 90° rispetto al busto, o anche più in alto se hai sufficiente mobilità e controllo.<br>
+        Discesa controllata:Abbassa le gambe lentamente fino alla posizione di partenza, mantenendo sempre il controllo e senza lasciarle cadere.<br>
+        Respirazione:Espira durante la salita e inspira durante la discesa.<br>
+        Mentre estendi verso il basso, pensa che il gomito rimanga fisso in un punto di fianco al tronco.<br>
+        Arriva in massima estensione di gomito e poi ritorna, accompagnando il movimento.
+      `,
+            immagine: '/image/sollevamento-gambe-alle-parallele.jpg'
+        },
+        AB: {
+            titolo: 'AB Wheel Roller',
+            descrizione: `
+        Posizione iniziale: inginocchiati a terra, afferra l’AB Wheel con entrambe le mani e posizionalo davanti a te, sotto le spalle.<br>
+        Movimento: fai rotolare lentamente la ruota in avanti, estendendo il corpo senza toccare il pavimento con il torso. Mantieni gli addominali contratti e la schiena dritta.<br>
+        Ritorno: fermati prima di perdere il controllo, poi torna alla posizione iniziale usando il core, non spingendo con le braccia.
+      `,
+            immagine: '/image/download.jpeg'
+        },
+
+    };
+
+    // Leggi parametro da URL
+    const params = new URLSearchParams(window.location.search);
+    const nomeEsercizio = params.get('esercizio');
+
+    // Trova esercizio
+    const esercizio = esercizi[nomeEsercizio];
+
+    // Inserisci contenuti se l'esercizio esiste
+    if (esercizio) {
+        document.querySelector('.exercise-type').textContent = esercizio.titolo;
+        document.querySelector('.exercise-description').innerHTML = `<p>${esercizio.descrizione}</p>`;
+        document.querySelector('.exercise-image').src = esercizio.immagine;
+        document.querySelector('.exercise-image').alt = esercizio.titolo;
+    } else {
+        // Fallback se non trovato
+        document.querySelector('.exercise-type').textContent = 'Esercizio non trovato';
+        document.querySelector('.exercise-description').innerHTML = `<p>L'esercizio richiesto non è disponibile.</p>`;
+        document.querySelector('.exercise-image').style.display = 'none';
+    }
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const categoria = params.get('categoria');
+
+        if (categoria) {
+            const categoriaCapitalizzata = categoria.charAt(0).toUpperCase() + categoria.slice(1);
+            document.querySelector('.back-button').href = `${categoriaCapitalizzata}.html`;
+        } else {
+            document.querySelector('.back-button').href = 'EserciziGenerale.html';
+        }
+    });
+</script>
+
+
+</body>
+</html>

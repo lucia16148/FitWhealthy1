@@ -1,0 +1,98 @@
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitWhealty - Ricettario</title>
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+<div id="header-container"></div>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+
+<main class="container">
+
+  <section class="content">
+    <h1 class="page-title">Ricettario</h1>
+
+    <div class="carousel-grid">
+      <div class="carousel-section">
+        <div class="section-header">
+          <h2>Primi</h2>
+          <a href="RicettePrimi.html" class="view-all">view all</a>
+        </div>
+        <div class="carousel" id="carousel-primi">
+          <div class="carousel-inner">
+          </div>
+          <div class="carousel-dots" id="dots-primi">
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section">
+        <div class="section-header">
+          <h2>Secondi</h2>
+          <a href="RicetteSecondi.html" class="view-all">view all</a>
+        </div>
+        <div class="carousel" id="carousel-secondi">
+          <div class="carousel-inner">
+          </div>
+          <div class="carousel-dots" id="dots-secondi">
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section">
+        <div class="section-header">
+          <h2>Contorni</h2>
+          <a href="RicetteContorni.html" class="view-all">view all</a>
+        </div>
+        <div class="carousel" id="carousel-contorni">
+          <div class="carousel-inner">
+          </div>
+          <div class="carousel-dots" id="dots-contorni">
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section">
+        <div class="section-header">
+          <h2>Dolci</h2>
+          <a href="RicetteDolci.html" class="view-all">view all</a>
+        </div>
+        <div class="carousel" id="carousel-dolci">
+          <div class="carousel-inner">
+          </div>
+          <div class="carousel-dots" id="dots-dolci">
+          </div>
+        </div>
+      </div>
+      <button class="add-button" onclick="window.location.href='AggiungiRicetta.html'">+</button>
+    </div>
+  </section>
+</main>
+
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+<script src="/javascript/like.js"></script>
+<script src="/javascript/profilo.js"></script>
+<script src="/javascript/menu.js"></script>
+
+
+</body>
+</html>

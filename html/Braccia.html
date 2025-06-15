@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elenco Esercizi</title>
+  <link rel="stylesheet" href="/css/EserciziSpecifici.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<div id="header-container"></div>
+
+<main class="exercise-container">
+  <div class="exercise-type">Braccia</div>
+  <a href="EserciziGenerale.html" class="back-button">←</a>
+
+  <div class="exercise-list">
+    <div class="exercise-item">
+      <a href="Esercizi.html?esercizio=Curlmanubri&categoria=braccia" class="type-button">
+      <span class="exercise-name">Curl manubri</span>
+      </a>
+      <span class="exercise-description">Il curl con manubri è un esercizio per allenare i bicipiti. Si esegue flettendo i gomiti e sollevando i manubri verso le spalle, mantenendo i gomiti fermi.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <a href="Esercizi.html?esercizio=Spidercurl&categoria=braccia" class="type-button">
+      <span class="exercise-name">Spider curl</span>
+      </a>
+      <span class="exercise-description">Lo spider curl è un esercizio isolato per i bicipiti, in particolare il capo corto. Si esegue appoggiando il petto su una panca inclinata e sollevando i manubri con i gomiti rivolti in basso, evitando slanci.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <a href="Esercizi.html?esercizio=Pushdown&categoria=braccia" class="type-button">
+      <span class="exercise-name">Push down</span>
+      </a>
+      <span class="exercise-description">Il pushdown è un esercizio per i tricipiti, eseguito con una corda o barra al cavo. Si spinge il peso verso il basso estendendo completamente i gomiti, mantenendo il busto fermo.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+
+
+    <!-- Aggiungi altri esercizi se vuoi testare lo scroll -->
+  </div>
+</main>
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+<script src="/javascript/cuore.js"></script>
+<!-- FOOTER QUI -->
+</body>
+</html>

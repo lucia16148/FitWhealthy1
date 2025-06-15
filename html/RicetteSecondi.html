@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitWhealty - Ricettario</title>
+  <link rel="stylesheet" href="/css/ricettario.css">
+</head>
+<body>
+
+
+<div id="header-container"></div>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+
+<main class="container">
+  <aside class="sidebar">
+    <a href="Menu.html" class="back-home">&lt; Menù</a>
+  </aside>
+
+  <section class="content">
+    <h1 class="page-title">Ricette Primi</h1>
+
+    <div class="recipe-grid" id="category-recipe-grid">
+    </div>
+
+    <button class="add-button">+</button>
+  </section>
+</main>
+
+<div id="comments-modal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <div class="comments-section-in-modal">
+      <h2 id="modal-recipe-title">Commenti</h2>
+      <div class="comments-list" id="comments-list">
+        <p>Nessun commento ancora. Sii il primo ad aggiungerne uno!</p>
+      </div>
+
+      <div class="add-comment-section" id="add-comment-section">
+        <h3>Aggiungi un commento</h3>
+        <div class="comment-input-area">
+          <textarea id="new-comment-text" placeholder="Scrivi il tuo commento qui..." rows="4"></textarea>
+          <button id="submit-comment-button" class="submit-comment-button">Invia Commento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+
+<script src="/javascript/profilo.js"></script> </body>
+<script src="/javascript/like.js"></script>
+<script src="/javascript/category.js"></script> </body>
+<script src="/javascript/commenti.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Per contenere elementi flottanti */
+}
+
+
+
+
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    padding: 20px;
+}
+
+.back-home {
+    color: green;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    position: relative; /* Per posizionare il bottone + */
+}
+
+.page-title {
+    text-align: center;
+    color: #007bff; /* BLU per il titolo della pagina */
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+/* Griglia per le sezioni dei caroselli */
+.carousel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Due colonne di larghezza uguale */
+    gap: 30px; /* Spazio tra le sezioni */
+    margin-top: 30px;
+}
+
+/* Carousel Section */
+.carousel-section {
+    /* Rimosso margin-bottom e border */
+    border: 1px solid #eee; /* Rimetti il bordo come da immagine */
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    /* Rimosso box-shadow qui per coerenza con l'immagine se il box-shadow è sugli item */
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    color: #007bff; /* BLU per i titoli delle sezioni */
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.section-header .view-all {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.section-header .view-all:hover {
+    text-decoration: underline;
+}
+
+.carousel {
+    overflow: hidden; /* Nasconde gli elementi che superano il bordo */
+    position: relative;
+    /* Nessun padding qui, i margini degli item dovrebbero gestire lo spazio */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animazione per lo scorrimento */
+}
+
+.carousel-item {
+    flex: 0 0 auto; /* Non ridimensionare gli item */
+    width: 100%; /* Ogni item deve occupare il 100% della larghezza del suo contenitore visibile */
+    margin-right: 0; /* Nessun margine tra gli item perché ne mostriamo solo uno */
+    /* border: 1px solid #ddd;  Rimosso per avere solo il bordo della sezione */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* L'ombra rimane sull'item */
+    background-color: #fff;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px; /* Altezza fissa per le immagini */
+    object-fit: cover;
+    display: block;
+    /* Bordo verde per l'immagine come da esempio */
+    border: 4px solid #4CAF50; /* Aggiungi un bordo verde per le immagini */
+    box-sizing: border-box; /* Include padding e border nella larghezza e altezza totale */
+}
+
+.item-details {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff; /* Sfondo blu per il dettaglio dell'item */
+    color: white; /* Testo bianco */
+    border-top: none; /* Rimuovi il bordo superiore se il background è già blu */
+    height: 60px; /* Altezza fissa per la barra inferiore */
+    box-sizing: border-box;
+}
+
+.item-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: white; /* Testo bianco */
+    flex-grow: 1;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    color: white; /* Cuore bianco sul background blu */
+    font-size: 1.5em;
+    cursor: pointer;
+    outline: none;
+    margin-left: 10px; /* Spazio tra testo e cuore */
+}
+
+.carousel-dots {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* Add Button (Floating) */
+.add-button {
+    position: fixed; /* O absolute se vuoi che sia relativo al content */
+    bottom: 40px; /* Distanza dal fondo */
+    left: 230px; /* Distanza dalla sinistra, considera la sidebar */
+    background-color: green; /* BLU per il bottone + */
+    color: white;
+    font-size: 3em;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .carousel-grid {
+        grid-template-columns: 1fr; /* Una colonna su schermi più piccoli */
+    }
+
+    .add-button {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

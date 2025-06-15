@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitWhealty - Dettagli Ricetta</title>
+  <link rel="stylesheet" href="/css/recipe.css">
+</head>
+<body>
+<div id="header-container"></div>
+<script>
+  // Caricamento dinamico dell'header (assicurati che header.html abbia la nav sidebar)
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+
+<main class="container">
+  <aside class="sidebar">
+    <a href="index.html" class="back-home">&lt; Indietro</a>
+  </aside>
+
+  <section class="content">
+    <h1 class="page-title">Ricetta</h1>
+
+    <div class="recipe-banner">
+      <div class="banner-text">
+        <h1 id="recipe-title"></h1>
+        <div class="banner-actions">
+          <button id="details-like-button" class="like-button">♡</button>
+
+          <button id="details-comment-button" class="comment-button">
+            <img src="../image/207-2078186_comment-icon-png.png" alt="Commenta">
+          </button>
+          <button id="delete-recipe-button" style="display:none;">Elimina Ricetta</button>
+        </div>
+      </div>
+      <div class="banner-image">
+        <img id="recipe-image" src="" alt="Immagine Ricetta">
+      </div>
+    </div>
+
+    <div class="recipe-section">
+      <h2>Ingredients</h2>
+      <div class="ingredients-list" id="ingredients-content">
+      </div>
+    </div>
+
+    <div class="recipe-section">
+      <h2>Instructions</h2>
+      <ol class="instructions-list" id="instructions-content">
+      </ol>
+    </div>
+
+    <button class="add-button" style="display: none;">+</button>
+  </section>
+</main>
+
+<div id="comments-modal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <div class="comments-section-in-modal">
+      <h2 id="modal-recipe-title">Commenti</h2> <div class="comments-list" id="comments-list">
+      <p>Nessun commento ancora. Sii il primo ad aggiungerne uno!</p>
+    </div>
+
+      <div class="add-comment-section" id="add-comment-section">
+        <h3>Aggiungi un commento</h3>
+        <div class="comment-input-area">
+          <textarea id="new-comment-text" placeholder="Scrivi il tuo commento qui..." rows="4"></textarea>
+          <button id="submit-comment-button" class="submit-comment-button">Invia Commento</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="footer-container"></div>
+<script>
+  // Caricamento dinamico del footer
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+
+<script src="/javascript/profilo.js"></script>
+<script src="/javascript/like.js"></script>
+<script src="/javascript/commenti.js"></script>
+<script src="/javascript/recipe.js"></script>
+
+</body>
+</html>

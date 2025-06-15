@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elenco Esercizi</title>
+  <link rel="stylesheet" href="/css/EserciziSpecifici.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+<div id="header-container"></div>
+
+<main class="exercise-container">
+  <div class="exercise-type">Cardio</div>
+  <a href="EserciziGenerale.html" class="back-button">←</a>
+
+  <div class="exercise-list">
+    <div class="exercise-item">
+      <a href="#" class="type-button">
+      <span class="exercise-name">Tapis roulant</span>
+      </a>
+      <span class="exercise-description">Macchina per camminare o correre in modo controllato e indoor, ideale per allenamenti cardio e migliorare resistenza e forma fisica.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <a href="#" class="type-button">
+      <span class="exercise-name">Cyclette</span>
+      </a>
+      <span class="exercise-description">Bicicletta stazionaria che permette di pedalare sul posto, ottima per allenamenti cardiovascolari a basso impatto sulle articolazioni.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <a href="#" class="type-button">
+      <span class="exercise-name">Vogatore</span>
+      </a>
+      <span class="exercise-description">Attrezzo che simula il movimento di vogata, coinvolgendo braccia, gambe e core, perfetto per un allenamento completo e tonificante.</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+    <div class="exercise-item">
+      <span class="exercise-name">#</span>
+      <span class="exercise-description">...</span>
+      <span class="heart" onclick="toggleHeart(this)">🖤</span>
+    </div>
+
+
+    <!-- Aggiungi altri esercizi se vuoi testare lo scroll -->
+  </div>
+</main>
+<div id="footer-container"></div>
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+<script>
+  fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+          });
+</script>
+<script src="/javascript/cuore.js"></script>
+<!-- FOOTER QUI -->
+</body>
+</html>
