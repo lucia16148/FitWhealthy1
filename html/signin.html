@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FitWhealthy - Registrazione</title>
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Font Awesome (opzionale) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
 
 <!-- NAVBAR -->
 <header class="header">
@@ -23,22 +27,23 @@
   </nav>
 </header>
 
-
 <!-- Sezione Registrazione -->
 <div class="registration-content">
   <div class="registration-box">
     <h2>Registrazione</h2>
-    <form action="#" method="post">
-      <input type="text" name="nome" placeholder="Nome" required />
-      <input type="date" name="data-nascita" placeholder="Data di Nascita" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <input type="password" name="conferma-password" placeholder="Conferma Password" required />
+
+    <form id="register-form">
+      <input type="text" id="register-name" name="nome" placeholder="Nome" required />
+      <input type="date" id="register-date" name="data-nascita" placeholder="Data di Nascita" required />
+      <input type="email" id="register-email" name="email" placeholder="Email" required />
+      <input type="password" id="register-password" name="password" placeholder="Password" required />
+      <input type="password" id="register-password-confirm" name="conferma-password" placeholder="Conferma Password" required />
+      <button type="submit" class="registration-box-button">Registrami</button>
     </form>
-    <p><a href="login.html" class="registration-box-button">Registrami</a></p>
+
+    <p>Hai già un account? <a href="login.html">Accedi</a></p>
   </div>
 </div>
-
 
 <!-- FOOTER -->
 <div id="footer-container"></div>
@@ -49,6 +54,9 @@
             document.getElementById('footer-container').innerHTML = data;
           });
 </script>
+
+<!-- Script di autenticazione -->
+<script src="/javascript/login.js"></script>
 
 </body>
 </html>
