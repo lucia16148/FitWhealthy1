@@ -7,6 +7,9 @@
     padding: 0.5rem 2rem;
     height: 60px;
 }
+.site-title {
+    color: white;
+}
 
 .logo {
     display: flex;
