@@ -14,16 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function saveComment(id, author, text) {
-        let allComments = JSON.parse(localStorage.getItem('CommunityComments')) || {};
+        let allComments = JSON.parse(sessionStorage.getItem('CommunityComments')) || {};
         if (!allComments[id]) {
             allComments[id] = [];
         }
         allComments[id].push({ author: author, text: text, timestamp: Date.now() });
-        localStorage.setItem('CommunityComments', JSON.stringify(allComments));
+        sessionStorage.setItem('CommunityComments', JSON.stringify(allComments));
     }
 
     function displayCommentsForDiscussion(discussionId, commentSectionElement) {
-        const allComments = JSON.parse(localStorage.getItem('CommunityComments')) || {};
+        const allComments = JSON.parse(sessionStorage.getItem('CommunityComments')) || {};
         const commentsForThisDiscussion = allComments[discussionId] || [];
 
         commentSectionElement.innerHTML = ''; //
