@@ -345,9 +345,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 confirmButtonColor: '#28a745'
             });
 
-            const recipeCard = document.getElementById(`custom-recipe-${recipeId}`);
-            if (recipeCard) {
-                recipeCard.remove();
+            if (loggedInUser && loggedInUser.email) {
+                loggedInUser.createdRecipeIds = loggedInUser.createdRecipeIds.filter(id => id !== recipeId);
+                saveUserToLocalStorage(loggedInUser);
+            }
+            loadUserRecipes(loggedInUser);
+            // Notifica il sistema di sincronizzazione globale
+            if (typeof window.refreshAllRecipeDisplays === 'function') {
+                window.refreshAllRecipeDisplays();
+
             }
 
 
