@@ -1,0 +1,97 @@
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: "Times New Roman", sans-serif;
+    background-color: #ffffff;
+}
+
+/* Layout principale */
+.content.grafico-periodo-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 45px 80px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Colonna sinistra */
+.grafico-periodo-left {
+    flex: 1 1 55%;
+}
+
+.grafico-periodo-left h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #003366;
+}
+
+.grafico-periodo-img {
+    max-width: 60%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Colonna destra */
+.right-panel {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.5rem;
+    color: #003366;
+}
+
+.align-left-text {
+    text-align: left;
+}
+
+.right-panel h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Form metrica */
+#metrics-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#metrics-form label {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    cursor: pointer;
+}
+
+#metrics-form input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+/* Bottone Visualizza */
+#viewGraphButton {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    max-width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#viewGraphButton:hover {
+    background-color: #45a049;
+}

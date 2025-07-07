@@ -5,16 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitWhealty - Ricette Primi</title>
     <link rel="stylesheet" href="/css/ricettario.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
 
 <div id="header-container"></div>
 <script>
     fetch('header.html')
-        .then(response => response.text())
+        .then(res => res.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
+
+            // Ora che il header è nel DOM, aggancio il listener al logout-link
+            const logoutLink = document.getElementById('logout-link');
+            if (logoutLink) {
+                logoutLink.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    Swal.fire({
+                        title: 'Sei sicuro di voler uscire?',
+                        text: 'La sessione verrà chiusa.',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Sì, esci',
+                        cancelButtonText: 'Annulla'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            sessionStorage.removeItem('loggedInUser');
+                            Swal.fire({
+                                icon: 'info',
+                                title: 'Logout effettuato',
+                                text: 'Sei stato disconnesso con successo.',
+                                confirmButtonText: 'OK'
+                            }).then(() => {
+                                window.location.href = 'mainpage.html';
+                            });
+                        }
+                    });
+                });
+            }
         });
+
 </script>
 
 <main class="container">
