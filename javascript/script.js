@@ -6,14 +6,40 @@ document.addEventListener("DOMContentLoaded", function () {
         viewGraphButton.addEventListener('click', function (event) {
             event.preventDefault();
 
-            const dataInizio = document.getElementById('data-inizio').value.trim();
-            const dataFine = document.getElementById('data-fine').value.trim();
+            const dataInizioInput = document.getElementById('data-inizio');
+            const dataFineInput = document.getElementById('data-fine');
+
+            const dataInizio = dataInizioInput.value.trim();
+            const dataFine = dataFineInput.value.trim();
 
             if (!dataInizio || !dataFine) {
                 alert("Per favore, inserisci entrambe le date.");
                 return;
             }
 
+            const oggi = new Date();
+            oggi.setHours(0, 0, 0, 0); // reset ore per confronto solo data
+
+            const inizio = new Date(dataInizio);
+            const fine = new Date(dataFine);
+
+            // Controlla che le date non siano future
+            if (inizio > oggi) {
+                alert("La data di inizio non può essere nel futuro.");
+                return;
+            }
+            if (fine > oggi) {
+                alert("La data di fine non può essere nel futuro.");
+                return;
+            }
+
+            // Controlla che la data fine non sia prima della data inizio
+            if (fine < inizio) {
+                alert("La data di fine non può essere precedente alla data di inizio.");
+                return;
+            }
+
+            // Se tutto ok, costruisce i parametri e cambia pagina
             const params = new URLSearchParams({
                 dataInizio,
                 dataFine
