@@ -49,7 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Controlla che la data fine non sia prima della data inizio
             if (fine < inizio) {
-                alert("La data di fine non può essere precedente alla data di inizio.");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Data non valida',
+                    text: 'La data di fine non può essere precedente alla data di inizio.'
+                });
                 return;
             }
 
