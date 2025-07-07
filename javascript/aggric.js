@@ -44,9 +44,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const ingredients = document.querySelector('.ingredients-section .text-area').value.trim();
 
             if (!recipeName || !recipeType || !instructions || !ingredients || !uploadedImageBase64) {
-                alert('Per favore, compila tutti i campi e carica un\'immagine per la ricetta.');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Campi mancanti',
+                    text: 'Per favore, compila tutti i campi e carica un\'immagine per la ricetta.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#f0ad4e' // Colore arancione tipo Bootstrap warning
+                });
                 return;
             }
+
 
             const newRecipe = {
                 id: 'custom-' + Date.now(),
@@ -74,16 +81,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('users', JSON.stringify(users));
             }
 
-            alert('Ricetta pubblicata e salvata nel browser!');
+            Swal.fire({
+                icon: 'success',
+                title: 'Ricetta pubblicata!',
+                text: 'La tua ricetta è stata salvata nel browser con successo.',
+                confirmButtonText: 'Ottimo!',
+                confirmButtonColor: '#28a745'
+            }).then(() => {
+                // Solo dopo la conferma dell'utente, fai il redirect
+                const targetPage = recipeTypeToPageMap[recipeType];
+                if (targetPage) {
+                    window.location.href = targetPage;
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Errore',
+                        text: 'Tipo di ricetta non riconosciuto. Verrai reindirizzato alla homepage.'
+                    }).then(() => {
+                        window.location.href = 'mainpageloggato.html';
+                    });
+                }
+            });
 
-            // Reindirizza alla pagina specifica del tipo di ricetta
-            const targetPage = recipeTypeToPageMap[recipeType];
-            if (targetPage) {
-                window.location.href = targetPage;
-            } else {
-                alert('Tipo di ricetta non riconosciuto, reindirizzamento alla homepage.');
-                window.location.href = 'mainpageloggato.html'; // Fallback
-            }
         });
     }
 

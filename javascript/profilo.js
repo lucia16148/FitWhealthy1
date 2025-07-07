@@ -158,11 +158,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             saveUserToLocalStorage(loggedInUser);
             displayUserProfile(loggedInUser);
-            alert('Profilo aggiornato con successo!');
+
+            // Popup stilizzato con SweetAlert2
+            Swal.fire({
+                icon: 'success',
+                title: 'Profilo aggiornato!',
+                text: 'I tuoi dati sono stati salvati correttamente.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#3085d6'
+            });
         } else {
-            alert('Errore: Utente non loggato o dati non validi per il salvataggio.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Errore',
+                text: 'Utente non loggato o dati non validi per il salvataggio.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#d33'
+            });
         }
     });
+
 
     // --- GESTIONE AVATAR ---
     changeAvatarButton.addEventListener('click', () => {
@@ -211,6 +226,20 @@ document.addEventListener('DOMContentLoaded', () => {
         'crema-caffe-acqua': { id: 'crema-caffe-acqua', title: 'Crema di caffè all’acqua', imageUrl: '../image/crema_caffe.webp', ingredients: ``, instructions: ``, type: 'dolce' },
         // ... AGGIUNGI QUI TUTTE LE TUE RICETTE STATICHE ESISTENTI
     };
+    function renderUserCreatedRecipes() {
+        const userCreatedRecipes = getUserCreatedRecipes(); // recupera da sessionStorage o localStorage
+        const createdRecipesGrid = document.getElementById('created-recipes-grid');
+        createdRecipesGrid.innerHTML = ''; // Pulisce il contenuto
+
+        if (!userCreatedRecipes || userCreatedRecipes.length === 0) {
+            createdRecipesGrid.innerHTML = '<p>Non hai ancora creato nessuna ricetta.</p>';
+            return;
+        }
+
+        userCreatedRecipes.forEach(recipe => {
+            createdRecipesGrid.insertAdjacentHTML('beforeend', generateRecipeCardHtml(recipe, true));
+        });
+    }
 
     function getRecipeDetailsById(recipeId) {
         if (allStaticRecipes[recipeId]) {
@@ -263,39 +292,69 @@ document.addEventListener('DOMContentLoaded', () => {
             userCreatedRecipes.forEach(recipe => {
                 createdRecipesGrid.insertAdjacentHTML('beforeend', generateRecipeCardHtml(recipe, true));
             });
+
             document.querySelectorAll('#created-recipes-grid .delete-custom-recipe-button').forEach(button => {
                 button.addEventListener('click', (event) => {
                     const recipeIdToDelete = event.target.dataset.recipeId;
-                    if (confirm('Sei sicuro di voler eliminare questa ricetta?')) {
-                        deleteCustomRecipe(recipeIdToDelete);
-                    }
+
+                    Swal.fire({
+                        title: 'Eliminare questa ricetta?',
+                        text: 'Questa azione non può essere annullata.',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Sì, elimina',
+                        cancelButtonText: 'Annulla',
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            deleteCustomRecipe(recipeIdToDelete);
+
+                            // ✅ Rimuove direttamente la card dal DOM
+                            const recipeCard = event.target.closest('.recipe-card');
+                            if (recipeCard) recipeCard.remove();
+
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Ricetta eliminata!',
+                                text: 'La tua ricetta è stata rimossa con successo.',
+                                confirmButtonText: 'OK',
+                                confirmButtonColor: '#28a745'
+                            });
+                        }
+                    });
                 });
             });
+
         }
+
     }
 
-    function deleteCustomRecipe(recipeId) {
+    async function deleteCustomRecipe(recipeId) {
         let customRecipes = JSON.parse(sessionStorage.getItem('customRecipes')) || [];
         const updatedRecipes = customRecipes.filter(recipe => recipe.id !== recipeId);
 
         if (updatedRecipes.length < customRecipes.length) {
             sessionStorage.setItem('customRecipes', JSON.stringify(updatedRecipes));
-            alert('Ricetta eliminata con successo dal tuo profilo!');
-            if (loggedInUser && loggedInUser.email) {
-                loggedInUser.createdRecipeIds = loggedInUser.createdRecipeIds.filter(id => id !== recipeId);
-                saveUserToLocalStorage(loggedInUser);
+
+            await Swal.fire({
+                icon: 'success',
+                title: 'Ricetta eliminata!',
+                text: 'La ricetta è stata rimossa con successo dal tuo profilo.',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#28a745'
+            });
+
+            const recipeCard = document.getElementById(`custom-recipe-${recipeId}`);
+            if (recipeCard) {
+                recipeCard.remove();
             }
-            loadUserRecipes(loggedInUser);
-            // Notifica il sistema di sincronizzazione globale
-            if (typeof window.refreshAllRecipeDisplays === 'function') {
-                window.refreshAllRecipeDisplays();
-            }
-        } else {
-            alert('Errore: Ricetta non trovata per l\'eliminazione.');
+
+
         }
     }
 
-    // --- CARICAMENTO RICETTE PREFERITE (LIKED) - Funzione resa globale ---
+            // --- CARICAMENTO RICETTE PREFERITE (LIKED) - Funzione resa globale ---
     window.loadLikedRecipes = function() {
         likedRecipesGrid.innerHTML = '';
         if (!loggedInUser || !loggedInUser.email) {
