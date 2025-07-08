@@ -71,11 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (index === -1) {
             loggedInUser.likedRecipeIds.push(recipeId);
             isLiked = true;
-            console.log(`Ricetta '${recipeId}' aggiunta ai preferiti di '${loggedInUser.email}'.`);
         } else {
             loggedInUser.likedRecipeIds.splice(index, 1);
             isLiked = false;
-            console.log(`Ricetta '${recipeId}' rimossa dai preferiti di '${loggedInUser.email}'.`);
         }
 
         saveUserToLocalStorage(loggedInUser);

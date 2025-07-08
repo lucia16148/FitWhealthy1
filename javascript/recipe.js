@@ -211,11 +211,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (index === -1) {
             loggedInUser.likedRecipeIds.push(recipeIdToToggle);
             isLiked = true;
-            console.log(`Ricetta '${recipeIdToToggle}' aggiunta ai preferiti di '${loggedInUser.email}'.`);
         } else {
             loggedInUser.likedRecipeIds.splice(index, 1);
             isLiked = false;
-            console.log(`Ricetta '${recipeIdToToggle}' rimossa dai preferiti di '${loggedInUser.email}'.`);
         }
 
         saveUserToLocalStorage(loggedInUser);
@@ -322,7 +320,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funzione globale per aggiornare lo stato del like e altri elementi UI quando notificato da global-sync
     window.refreshDetailsPage = function() {
-        console.log("Dettagli Ricetta: Ricevuto refresh da global-sync.");
         if (currentRecipeId) {
             if (likeButton) {
                 updateHeartIcon(likeButton, isRecipeLiked(currentRecipeId));

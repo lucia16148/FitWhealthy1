@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 creatorId: loggedInUser.email // ASSOCIA LA RICETTA ALL'UTENTE
 
             };
-            console.log()
             let customRecipes = JSON.parse(sessionStorage.getItem('customRecipes')) || [];
             customRecipes.push(newRecipe);
             sessionStorage.setItem('customRecipes', JSON.stringify(customRecipes));

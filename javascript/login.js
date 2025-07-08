@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (users.length === 0) {
         users = initialStaticUsers;
         localStorage.setItem('users', JSON.stringify(users));
-        console.log("Utenti statici inizializzati nel localStorage.");
     }
 
     function updateLoginLogoutLink() {

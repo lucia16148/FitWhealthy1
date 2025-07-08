@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         localStorage.setItem('users', JSON.stringify(users));
         sessionStorage.setItem('loggedInUser', JSON.stringify(user));
-        console.log("Utente salvato/aggiornato in menu.js:", user.email);
     }
 
 
@@ -81,24 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (index === -1) {
             loggedInUser.likedRecipeIds.push(recipeIdToToggle);
             isLiked = true;
-            console.log(`Ricetta '${recipeIdToToggle}' aggiunta ai preferiti di '${loggedInUser.email}'.`);
         } else {
             loggedInUser.likedRecipeIds.splice(index, 1);
             isLiked = false;
-            console.log(`Ricetta '${recipeIdToToggle}' rimossa dai preferiti di '${loggedInUser.email}'.`);
         }
 
         saveUserToLocalStorage(loggedInUser); // Usa la funzione locale qui
 
-        // Poiché le funzioni di like ora sono locali a menu.js,
-        // non c'è una "window.refreshAllRecipeDisplays" da chiamare globalmente.
-        // L'aggiornamento avverrà solo per i bottoni in questa pagina.
-        // Se cambi idea e vuoi una gestione globale, dovrai rimetterla su window.
-        // Qui, l'aggiornamento del singolo bottone è gestito nel listener del click.
+
 
         return isLiked;
     }
-    // --- FINE Funzioni di gestione "Mi Piace" ---
 
 
     // Funzione per filtrare le ricette per categoria

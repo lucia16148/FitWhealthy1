@@ -1,6 +1,3 @@
-// profile-script.js
-
-// js/profile-script.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const profileAvatar = document.getElementById('profile-avatar');
@@ -56,11 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (index === -1) {
             loggedInUser.likedRecipeIds.push(recipeId);
             isLiked = true;
-            console.log(`Ricetta '${recipeId}' aggiunta ai preferiti di '${loggedInUser.email}'.`);
         } else {
             loggedInUser.likedRecipeIds.splice(index, 1);
             isLiked = false;
-            console.log(`Ricetta '${recipeId}' rimossa dai preferiti di '${loggedInUser.email}'.`);
         }
 
         saveUserToLocalStorage(loggedInUser);
@@ -145,60 +140,64 @@ document.addEventListener('DOMContentLoaded', () => {
         changeAvatarButton.style.display = isEditing ? 'block' : 'none';
     }
 
-    editProfileButton.addEventListener('click', () => {
-        toggleEditMode(true);
-    });
+    if (editProfileButton) {
+        editProfileButton.addEventListener('click', () => {
+            toggleEditMode(true);
+        });
+    }
+    if (saveProfileButton) {
+        saveProfileButton.addEventListener('click', () => {
+            if (loggedInUser && loggedInUser.email) {
+                loggedInUser.weight = inputWeight.value;
+                loggedInUser.height = inputHeight.value;
+                loggedInUser.age = inputAge.value;
+                loggedInUser.phone = inputPhone.value;
 
-    saveProfileButton.addEventListener('click', () => {
-        if (loggedInUser && loggedInUser.email) {
-            loggedInUser.weight = inputWeight.value;
-            loggedInUser.height = inputHeight.value;
-            loggedInUser.age = inputAge.value;
-            loggedInUser.phone = inputPhone.value;
+                saveUserToLocalStorage(loggedInUser);
+                displayUserProfile(loggedInUser);
 
-            saveUserToLocalStorage(loggedInUser);
-            displayUserProfile(loggedInUser);
+                // Popup stilizzato con SweetAlert2
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Profilo aggiornato!',
+                    text: 'I tuoi dati sono stati salvati correttamente.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#3085d6'
+                });
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Errore',
+                    text: 'Utente non loggato o dati non validi per il salvataggio.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#d33'
+                });
+            }
+        });
+    }
 
-            // Popup stilizzato con SweetAlert2
-            Swal.fire({
-                icon: 'success',
-                title: 'Profilo aggiornato!',
-                text: 'I tuoi dati sono stati salvati correttamente.',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#3085d6'
-            });
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Errore',
-                text: 'Utente non loggato o dati non validi per il salvataggio.',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#d33'
-            });
-        }
-    });
+    if (changeAvatarButton) {
+        changeAvatarButton.addEventListener('click', () => {
+            avatarUpload.click();
+        });
+    }
 
-
-    // --- GESTIONE AVATAR ---
-    changeAvatarButton.addEventListener('click', () => {
-        avatarUpload.click();
-    });
-
-    avatarUpload.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                profileAvatar.src = e.target.result;
-                if (loggedInUser && loggedInUser.email) {
-                    loggedInUser.avatar = e.target.result;
-                    saveUserToLocalStorage(loggedInUser);
-                }
-            };
-            reader.readAsDataURL(file);
-        }
-    });
-
+    if (avatarUpload) {
+        avatarUpload.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    profileAvatar.src = e.target.result;
+                    if (loggedInUser && loggedInUser.email) {
+                        loggedInUser.avatar = e.target.result;
+                        saveUserToLocalStorage(loggedInUser);
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
     // --- FUNZIONI DI SUPPORTO PER LE RICETTE (DATABASE STATICO) ---
     const allStaticRecipes = {
         'spaghetti-pomodoro': { id: 'spaghetti-pomodoro', title: 'Spaghetti al Pomodoro', imageUrl: '../image/pasta-al-pomodoro-dietetica-1200x799.jpg.webp', ingredients: ``, instructions: ``, type: 'primo' },
