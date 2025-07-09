@@ -10,6 +10,7 @@
 
 </head>
 <body>
+<script src="/javascript/cuore.js"></script>
 <div id="header-container"></div>
 
 <main class="exercise-container">
@@ -17,21 +18,21 @@
   <a href="EserciziGenerale.html" class="back-button">←</a>
 
   <div class="exercise-list">
-    <div class="exercise-item">
+    <div class="exercise-item" data-difficolta="alta">
       <a href="Esercizi.html?esercizio=LegPress&categoria=gambe" class="type-button">
       <span class="exercise-name">Leg press</span>
       </a>
       <span class="exercise-description">La Leg press è generalmente considerato un esercizio complementare allo Squat ed è più accessibile in quanto richiede una minore abilità tecnica.</span>
       <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
-    <div class="exercise-item">
+    <div class="exercise-item" data-difficolta="bassa">
       <a href="Esercizi.html?esercizio=Affondimanubri&categoria=gambe" class="type-button">
       <span class="exercise-name">Panca piana</span>
       </a>
       <span class="exercise-description">Gli affondi sono un esercizio per gambe e glutei che migliora forza, equilibrio e stabilità. Si eseguono facendo un passo avanti e piegando entrambe le ginocchia fino a formare angoli di 90°</span>
       <span class="heart" onclick="toggleHeart(this)">🖤</span>
     </div>
-    <div class="exercise-item">
+    <div class="exercise-item" data-difficolta="media">
       <a href="Esercizi.html?esercizio=Squat&categoria=gambe" class="type-button">
       <span class="exercise-name">Squat</span>
       </a>
@@ -112,7 +113,7 @@
           });
 
 </script>
-<script src="/javascript/cuore.js"></script>
+
 <!-- FOOTER QUI -->
 </body>
 </html>

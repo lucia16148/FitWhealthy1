@@ -157,5 +157,16 @@ body {
 .heart:hover {
     transform: scale(1.2);
 }
+.hot-heart, .heart {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hot-heart {
+    margin-right: 6px; /* spazio tra fiamma e cuore */
+    color: #e25822;    /* colore fiamma arancione */
+    font-size: 1.2em;  /* dimensione fiamma */
+}
+
 
 
