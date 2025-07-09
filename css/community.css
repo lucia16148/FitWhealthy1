@@ -81,3 +81,19 @@ textarea, input[type="text"] {
 textarea {
     resize: vertical;
 }
+
+.back-arrow {
+    display: inline-block;
+    margin: 18px 22px;
+    font-size: 2rem;
+    color: #003366;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-align: left;
+}
+
+.back-arrow:hover {
+    color: #1a73e8;
+    text-decoration: underline;
+}

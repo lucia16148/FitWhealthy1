@@ -95,3 +95,18 @@ body, html {
 #viewGraphButton:hover {
     background-color: #45a049;
 }
+
+.back-arrow {
+    display: inline-block;
+    margin: 16px 20px;
+    font-size: 1.9rem;
+    color: #003366;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+    color: #1a73e8;
+    text-decoration: underline;
+}
