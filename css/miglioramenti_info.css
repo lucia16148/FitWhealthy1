@@ -1,0 +1,49 @@
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: "Times New Roman", sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100%;
+}
+
+
+/* Contenuto principale della pagina */
+.content {
+    padding-top: 130px;  /* Distanza dalla navbar */
+    padding-bottom: 70px; /* Spazio sotto il contenuto */
+}
+
+.explanation-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.explanation-container h1 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.explanation-container p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.explanation-container h2 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
