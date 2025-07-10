@@ -16,8 +16,8 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 25px 20px 60px;
-    min-height: 90vh;
+    padding: 10px 10px 30px;
+    min-height: 65vh;
 }
 
 /* Contenitore del grafico */

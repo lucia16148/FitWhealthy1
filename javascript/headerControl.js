@@ -4,7 +4,7 @@ const currentPage = window.location.pathname.split("/").pop();
 // Seleziona il container dove inserire i bottoni
 const nav = document.getElementById("navButtons");
 
-if (currentPage === "/html/mainpage.html") {
+if (currentPage === "/html/mainpage.html" || currentPage === "/html/miglioramenti_info.html" || currentPage === "/html/ricette_info.html"|| currentPage === "/html/allenamento_info.html") {
     // Solo Login e Registrati
     nav.innerHTML = `
     <a href="/html/login.html"><button class="btn-login">Login</button></a>

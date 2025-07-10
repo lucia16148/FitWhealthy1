@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Community</title>
-    <link rel="stylesheet" href="/css/community.css">
+    <title>Come Funziona la Sezione Allenamento</title>
+    <link rel="stylesheet" href="/css/allenamento_info.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -14,33 +14,32 @@
 
 <div id="header-container"></div>
 
-<main class="community-content">
-    <h1>Benvenuto nella Community!</h1>
+<main class="content explanation-container">
+    <div class="explanation">
+        <h1>Come Funziona la Sezione Allenamento</h1>
 
+        <p>La sezione "Allenamento" di FitWhealthy ti permette di scoprire e seguire esercizi personalizzati per i tuoi obiettivi fisici. Che tu voglia migliorare la resistenza, tonificare o perdere peso, troverai gli esercizi giusti per te!</p>
 
-    <!-- Sezione per creare una nuova discussione -->
-    <section class="post-discussion">
-        <h2>Crea una nuova Discussione</h2>
-        <form id="discussion-form">
-            <input type="text" id="discussion-title" placeholder="Titolo della discussione" required />
-            <textarea id="discussion-content" rows="4" placeholder="Scrivi il contenuto della discussione..." required></textarea>
-<!--            <input type="text" id="username" placeholder="Il tuo nome" required />-->
-            <button type="submit" id="submit-discussion-button">Crea Discussione</button>
-        </form>
-    </section>
+        <h2>1. Esplora gli Esercizi</h2>
+        <p>Nella sezione "Esercizi", troverai una vasta gamma di allenamenti suddivisi per categoria. Ogni esercizio è descritto con le indicazioni dettagliate su come eseguirlo correttamente.</p>
 
-    <!-- Sezione Discussioni -->
-    <section class="discussion-board">
-        <h2>Discussioni</h2>
-        <div id="discussion-list" class="discussion-list">
-            <!-- Le discussioni appariranno qui -->
-        </div>
-    </section>
+        <h2>2. Aggiungi gli Esercizi ai "Preferiti"</h2>
+        <p>Ogni esercizio può essere salvato nella sezione "Preferiti" cliccando sull'icona del cuore. Una volta aggiunto ai "Preferiti", l'esercizio apparirà nella tua area personale, dove potrai facilmente accedervi ogni volta che vorrai ripeterlo.</p>
 
+        <h2>3. Programma di Allenamento Personalizzato</h2>
+        <p>Se vuoi creare un programma di allenamento su misura, seleziona gli esercizi che meglio si adattano ai tuoi obiettivi. Dopo aver creato il tuo piano, puoi visualizzare il programma settimanale e monitorare i tuoi progressi.</p>
 
+        <h2>4. Monitoraggio dei Progressi</h2>
+        <p>Una volta che hai iniziato a seguire gli esercizi, puoi monitorare i tuoi progressi nella sezione "Miglioramenti". Qui, potrai vedere i tuoi miglioramenti nel tempo in base alle metriche selezionate.</p>
+
+        <h2>5. Condividi e Motiva</h2>
+        <p>Puoi condividere i tuoi allenamenti e i tuoi progressi con altri utenti. Se hai completato un programma di allenamento, puoi pubblicarlo nella sezione Community e motivare altri utenti a fare lo stesso. Ogni utente potrà commentare e rispondere, creando una rete di supporto.</p>
+
+    </div>
 </main>
 
 <div id="footer-container"></div>
+
 <script>
     fetch('footer.html')
         .then(response => response.text())
@@ -85,7 +84,6 @@
 
 </script>
 
-<script src="/javascript/community.js"></script>
-<script src="/javascript/login.js"></script>
+
 </body>
 </html>
