@@ -13,11 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const dataFine = dataFineInput.value.trim();
 
             if (!dataInizio || !dataFine) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Attenzione',
-                    text: 'Per favore, inserisci entrambe le date.'
-                });
+                alert("Per favore, inserisci entrambe le date.");
                 return;
             }
 
@@ -29,31 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Controlla che le date non siano future
             if (inizio > oggi) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Data non valida',
-                    text: 'La data di inizio non è valida.'
-                });
+                alert("La data di inizio non può essere nel futuro.");
                 return;
             }
-
             if (fine > oggi) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Data non valida',
-                    text: 'La data di fine non è valida.'
-                });
+                alert("La data di fine non può essere nel futuro.");
                 return;
             }
-
 
             // Controlla che la data fine non sia prima della data inizio
             if (fine < inizio) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Data non valida',
-                    text: 'La data di fine non può essere precedente alla data di inizio.'
-                });
+                alert("La data di fine non può essere precedente alla data di inizio.");
                 return;
             }
 

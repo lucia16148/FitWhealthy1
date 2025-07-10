@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Come Funziona la Sezione Miglioramenti</title>
+  <link rel="stylesheet" href="/css/miglioramenti_info.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <a href="mainpage.html" class="quadrant">
+      <img src="/image/logoFitWhealthy.png" alt="Logo" class="logo-img" />
+    </a>
+    <h1>FitWhealty</h1>
+  </div>
+  <nav class="nav-buttons">
+    <a href="login.html"><button class="btn-login">Login</button></a>
+    <a href="signin.html"><button class="btn-register">Registrati</button></a>
+  </nav>
+</header>
+
+<div id="header-container"></div>
+
+<main class="content explanation-container">
+  <div class="explanation">
+    <h1>Come Funziona la Sezione Miglioramenti</h1>
+
+    <p>La sezione "Miglioramenti" ti permette di monitorare i tuoi progressi nel tempo, in base alle metriche selezionate. Puoi visualizzare il tuo progresso in termini di peso, acqua e esercizi, attraverso un grafico che si aggiorna automaticamente in base al periodo che selezioni.</p>
+
+    <h2>1. Seleziona un Periodo</h2>
+    <p>Per visualizzare i tuoi miglioramenti in un intervallo specifico, devi prima selezionare una "Data di Inizio" e una "Data di Fine". L'intervallo che scegli influenzerà i dati che vengono mostrati nel grafico.</p>
+
+    <h2>2. Seleziona le Metriche</h2>
+    <p>Puoi scegliere tra tre metriche: peso, acqua ed esercizi. In base a queste scelte, il grafico mostrerà le linee corrispondenti, ognuna rappresentante una delle metriche.</p>
+
+    <h2>3. Visualizza il Grafico</h2>
+    <p>Una volta che hai selezionato il periodo e le metriche, il grafico si aggiorna automaticamente. Puoi anche esportare il grafico in formato PNG per conservarlo o condividerlo.</p>
+
+    <h2>4. Esporta il Grafico</h2>
+    <p>Se desideri, puoi scaricare il grafico per tenerne traccia o per utilizzarlo in futuro. Clicca sul pulsante "Esporta" per scaricare il grafico in formato PNG.</p>
+
+  </div>
+</main>
+
+<div id="footer-container"></div>
+
+<script>
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+          });
+</script>
+
+</body>
+</html>
