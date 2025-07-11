@@ -11,39 +11,66 @@ body, html {
     min-height: 100%;
 }
 
-
 /* Contenuto principale della pagina */
 .content {
-    padding-top: 130px;  /* Distanza dalla navbar */
-    padding-bottom: 70px; /* Spazio sotto il contenuto */
+    padding-top: 130px;
+    padding-bottom: 70px;
 }
 
 .explanation-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.explanation-container h1 {
+/* Layout due colonne */
+.two-columns {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.explanation {
+    flex: 2;
+}
+
+.explanation h1 {
     font-size: 2rem;
     color: #003366;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
-.explanation-container p {
+.explanation p {
     font-size: 1.2rem;
     color: #333;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.explanation-container h2 {
+.explanation h2 {
     font-size: 1.5rem;
     color: #003366;
     margin-top: 30px;
     margin-bottom: 10px;
 }
+
+/* Colonna immagini */
+.info-image-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+.info-image-column img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
